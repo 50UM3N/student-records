@@ -13,6 +13,20 @@ app.use(express.urlencoded({
     extended: false
 }));
 
+
+app.get('/', (req, res) => {
+    res.render('index.ejs')
+})
+app.get('/students', (req, res) => {
+    res.render('students.ejs')
+})
+app.get('/student', (req, res) => {
+    res.render('student.ejs')
+})
+app.get('/create', (req, res) => {
+    res.render('create.ejs')
+})
+
 //starting the server
 app.listen(port, e => {
     console.log('Listen on port ', port)
