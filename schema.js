@@ -13,10 +13,10 @@ const student = new mongoose.Schema({
         type: String,
         require: true
     },
-    degree: [{
+    degree: {
         type: String,
         require: true
-    }]
+    }
 });
 //export that student schema 
 module.exports = new mongoose.model('student', student);
