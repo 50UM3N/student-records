@@ -1,1 +1,134 @@
-students
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <style>
+        /* basic styling */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Heebo", sans-serif;
+        }
+
+        .container {
+            display: flex;
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        input {
+            width: 300px;
+            height: 38px;
+            border: 0.1rem solid gray;
+            border-radius: 0.25rem;
+            font-size: 18px;
+            padding-left: .5rem;
+            margin: 0;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: dodgerblue;
+        }
+
+        .inputBox {
+            padding-bottom: .5rem;
+        }
+
+        .inputBox button {
+            height: 38px;
+            padding: 0px 1rem;
+            outline: none;
+            border: 0.1rem solid dodgerblue;
+            background-color: transparent;
+            color: dodgerblue;
+            border-radius: 0.25rem;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s linear;
+            margin-left: 1rem;
+        }
+
+        .inputBox button:hover {
+            color: white;
+            background-color: dodgerblue;
+            border-color: dodgerblue;
+        }
+
+        .studentContainer {
+            position: relative;
+            border: 0.1rem solid dodgerblue;
+            border-radius: 0.25rem;
+            width: 500px;
+            height: 38px;
+            padding: .5rem;
+            margin-bottom: .5rem;
+        }
+
+        span {
+            font-size: .7rem;
+        }
+
+        p {
+            color: black;
+        }
+
+        a {
+            position: absolute;
+            right: 0;
+            top: 0;
+            text-decoration: none;
+            color: dodgerblue;
+            font-weight: bold;
+
+
+        }
+
+        a div {
+            height: 38px;
+            width: 70px;
+            text-align: center;
+            line-height: 2.1rem;
+        }
+    </style>
+    <title>Index</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Students Record</h1><br>
+        <form action="/students" method="GET">
+            <div class="inputBox">
+                <input type="text" type="name" name="name" value="<%= searchedData.name %>">
+                <button type="submit"> Search </button>
+            </div>
+        </form>
+
+        <!-- for each students create individual section -->
+        <% students.forEach(student=>{ %>
+        <div class="studentContainer">
+            <p><%= student.name %> (<%=student.degree%> ) <span><b>Email:</b> <%= student.email%>, <b>Phone:</b>
+                    <%= student.phone %>
+                </span> </p>
+            <a href="student?<%=student.email%> ">
+                <div>Check</div>
+            </a>
+        </div>
+        <% }) %>
+    </div>
+
+
+</body>
+
+</html>

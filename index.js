@@ -40,12 +40,14 @@ app.use(session({
 app.use(flash())
 
 app.post('/create', (req, res) => {
+    //store the all data come form the form
     const {
         name,
         email,
         phone,
         degree
     } = req.body
+    //fined that some one has alredy exist in the databse
     student.findOne({
         email: email
     }, (err, data) => {
@@ -59,6 +61,7 @@ app.post('/create', (req, res) => {
                 res.redirect('/create')
             }
         } else {
+            //if all condition are satisfy the add tha t user in the database
             student({
                 name,
                 email,
@@ -75,20 +78,48 @@ app.post('/create', (req, res) => {
                     req.flash('success', 'Creation Successful');
                     res.redirect('/create')
                 }
-            });
+            })
         }
     })
 })
 
+//main home rote
 app.get('/', (req, res) => {
+
     res.render('index.ejs')
 })
+
+// all students and search route
 app.get('/students', (req, res) => {
-    res.render('students.ejs')
+    let searchOption = {}
+    //check that search variable is avtive or note
+    if (req.body.name !== null && req.body.name !== '') {
+        searchOption.name = new RegExp(req.query.name, 'i')
+
+    }
+    //search for all data or for a specific kind for student/s
+    student.find(searchOption, (err, data) => {
+        if (data) {
+            if (err) {
+                req.redirect('/')
+            }
+            if (data) {
+                console.log(data)
+                res.render('students.ejs', {
+                    students: data,
+                    searchedData: req.query
+                })
+            }
+        } else {
+            req.redirect('/')
+        }
+    })
 })
+//individual student routes
 app.get('/student', (req, res) => {
     res.render('student.ejs')
 })
+//create student routs
 app.get('/create', (req, res) => {
     res.render('create.ejs')
 })
