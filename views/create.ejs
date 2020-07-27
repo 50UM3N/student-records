@@ -20,6 +20,16 @@
 <div class="col-sm-4 offset-sm-4" style="margin-top: 50px;">
     <div class="card">
         <article class="card-body">
+            <% if(locals.messages.msg) {%>
+            <div class="alert alert-danger" role="alert">
+                <%= locals.messages.msg %>
+            </div>
+            <% } %>
+            <% if (locals.messages.success) { %>
+            <div class="alert alert-success" role="alert">
+                <%= locals.messages.success %>
+            </div>
+            <% } %>
             <form action="/create" method="POST">
                 <h4 class="card-title mb-4 mt-1">Add Student</h4>
                 <div class="form-group">

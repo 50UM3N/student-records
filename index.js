@@ -3,11 +3,13 @@
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
+const flash = require('express-flash')
+const session = require('express-session')
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080
-const mongoose = require('mongoose');
-const student = require('./schema');
+const mongoose = require('mongoose')
+const student = require('./schema')
 
 //connecting to the mongodb database
 mongoose.connect(process.env.MONGO_URL, {
@@ -16,18 +18,26 @@ mongoose.connect(process.env.MONGO_URL, {
         useFindAndModify: false
     })
     .then(() => {
-        console.log('Database Connected');
+        console.log('Database Connected')
     });
 
 
 //setting up view engines to ejs
-app.set("view-engine", "ejs");
+app.set("view-engine", "ejs")
 
 //use url encoder for get the data 
 app.use(express.urlencoded({
     extended: false
 }));
 
+//use express session for use flash messuage
+app.use(session({
+    secret: 'soumenkhara',
+    saveUninitialized: true,
+    resave: true
+}))
+//use flash for the small success and error message display in html
+app.use(flash())
 
 app.post('/create', (req, res) => {
     const {
@@ -40,13 +50,13 @@ app.post('/create', (req, res) => {
         email: email
     }, (err, data) => {
         if (err) {
-            console.log('error', err)
-            res.redirect('/create');
+            req.flash('msg', 'Creation Unsuccessful')
+            res.redirect('/create')
         }
         if (data) {
             if (data.email == email) {
-                console.log('Student already exist')
-                res.redirect('/create');
+                req.flash('msg', 'Student already exist')
+                res.redirect('/create')
             }
         } else {
             student({
@@ -56,13 +66,14 @@ app.post('/create', (req, res) => {
                 degree
             }).save((err, data) => {
                 if (err) {
-                    console.log('Error in database');
-                    res.redirect('/create');
+                    console.log('Error in database')
+                    req.flash('msg', 'Creation Unsuccessful')
+                    res.redirect('/create')
                 }
                 if (data) {
-                    console.log(data);
-                    console.log('Creation  Successful');
-                    res.redirect('/create');
+                    console.log(data)
+                    req.flash('success', 'Creation Successful');
+                    res.redirect('/create')
                 }
             });
         }
