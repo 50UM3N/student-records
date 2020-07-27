@@ -116,10 +116,20 @@ app.get('/students', (req, res) => {
     })
 })
 //individual student routes
-app.get('/student', (req, res) => {
-    res.render('student.ejs')
+app.get('/student', checkParam, (req, res) => {
+    //Get the student data
+
+    student.findOne({
+        email: req.query.email
+    }, (err, data) => {
+        res.render('student.ejs', {
+            student: data
+        })
+    })
+
 })
 //create student routs
+
 app.get('/create', (req, res) => {
     res.render('create.ejs')
 })
@@ -128,3 +138,12 @@ app.get('/create', (req, res) => {
 app.listen(port, e => {
     console.log('Listen on port ', port)
 })
+
+//middleware fore the unauthorized student chalking
+function checkParam(req, res, next) {
+    if (req.query.email === undefined || req.query.email === '') {
+        return res.redirect('/')
+    } else {
+        return next()
+    }
+}
