@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -14,10 +15,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <!-- filepond cdn -->
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+        rel="stylesheet">
+
     <title>Create</title>
 </head>
 
 <body>
+
     <div class="sm" style="margin: 50px auto; max-width: 700px; ">
         <div class="card">
             <article class="card-body">
@@ -33,6 +40,7 @@
                 <% } %>
                 <form action="/create" method="POST">
                     <h4 class="card-title mb-4 mt-1">Add Student</h4>
+                    <input type="file" class="filepond">
                     <div class="form-group">
                         <label> Name</label>
                         <input name="name" class="form-control" placeholder="Full Name" type="name" required>
@@ -57,7 +65,30 @@
         </div>
     </div>
 
+    <!-- filepond cdn -->
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 
+    <!-- Turn all file input elements into fileponds elements-->
+    <script>
+        // plugins that are used
+        FilePond.registerPlugin(
+            FilePondPluginImagePreview,
+            FilePondPluginImageResize,
+            FilePondPluginFileEncode,
+        )
+
+        // options for resixe the image
+        FilePond.setOptions({
+            stylePanelAspectRatio: 129 / 78,
+            imageResizeTargetWidth: 78,
+            imageResizeTargetHeight: 129
+        })
+        FilePond.parse(document.body);
+    </script>
 </body>
 
 </html>
