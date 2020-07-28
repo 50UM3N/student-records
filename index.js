@@ -83,6 +83,37 @@ app.post('/create', (req, res) => {
     })
 })
 
+app.post('/update', (req, res) => {
+    //store the all data come form the form
+    const {
+        id,
+        name,
+        email,
+        phone,
+        degree
+    } = req.body
+    //find the student with the help if id and update the details
+    student.findByIdAndUpdate(id, {
+        name: name,
+        email: email,
+        phone: phone,
+        degree: degree
+    }, (err, data) => {
+        if (err) {
+            req.flash('msg', 'Server Error')
+            res.redirect('/update')
+        }
+        if (data) {
+            console.log("Update")
+            res.redirect(`/student?email=${email}`)
+        } else {
+            req.flash('msg', 'Somethings Wrong')
+            console.log(" error")
+            res.redirect('/update')
+        }
+    })
+})
+
 //main home rote
 app.get('/', (req, res) => {
 
@@ -92,7 +123,7 @@ app.get('/', (req, res) => {
 // all students and search route
 app.get('/students', (req, res) => {
     let searchOption = {}
-    //check that search variable is avtive or note
+    //check that search variable is active or note
     if (req.body.name !== null && req.body.name !== '') {
         searchOption.name = new RegExp(req.query.name, 'i')
 
@@ -134,6 +165,19 @@ app.get('/create', (req, res) => {
     res.render('create.ejs')
 })
 
+//student update route
+app.get('/update', (req, res) => {
+    //find one student that has to edit the info
+    student.findOne({
+        email: req.query.email
+    }, (err, data) => {
+        res.render('update.ejs', {
+            student: data
+        })
+    })
+
+})
+
 //starting the server
 app.listen(port, e => {
     console.log('Listen on port ', port)
@@ -147,3 +191,5 @@ function checkParam(req, res, next) {
         return next()
     }
 }
+
+//middleware for update student route 
