@@ -15,7 +15,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <!-- filepond cdn -->
+    <!-- filepond stylesheet cdn -->
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
         rel="stylesheet">
@@ -40,7 +40,7 @@
                 <% } %>
                 <form action="/create" method="POST">
                     <h4 class="card-title mb-4 mt-1">Add Student</h4>
-                    <input type="file" class="filepond">
+                    <input required type="file" class="filepond" name="studentImage">
                     <div class="form-group">
                         <label> Name</label>
                         <input name="name" class="form-control" placeholder="Full Name" type="name" required>
@@ -65,7 +65,7 @@
         </div>
     </div>
 
-    <!-- filepond cdn -->
+    <!-- filepond js cdn -->
     <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
     <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
     <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>

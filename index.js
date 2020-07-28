@@ -10,7 +10,7 @@ const app = express()
 const port = process.env.PORT || 8080
 const mongoose = require('mongoose')
 const student = require('./schema')
-
+const imageTypes = ['image/jpeg', 'image/png', 'images/gif']
 //connecting to the mongodb database
 mongoose.connect(process.env.MONGO_URL, {
         useNewUrlParser: true,
@@ -27,6 +27,7 @@ app.set("view-engine", "ejs")
 
 //use url encoder for get the data 
 app.use(express.urlencoded({
+    limit: '10mb',
     extended: false
 }));
 
@@ -40,33 +41,42 @@ app.use(session({
 app.use(flash())
 
 app.post('/create', (req, res) => {
-    //store the all data come form the form
-    const {
-        name,
-        email,
-        phone,
-        degree
-    } = req.body
+    //store the image data to the variable
+    const imageData = req.body.studentImage
     //fined that some one has alredy exist in the databse
     student.findOne({
-        email: email
+        email: req.body.email
     }, (err, data) => {
         if (err) {
             req.flash('msg', 'Creation Unsuccessful')
             res.redirect('/create')
         }
         if (data) {
-            if (data.email == email) {
+            if (data.email == req.body.email) {
                 req.flash('msg', 'Student already exist')
                 res.redirect('/create')
             }
         } else {
             //if all condition are satisfy the add tha t user in the database
+
+            //check that the is not send to the server
+            let image, imageType
+            if (imageData == null) return
+            const studentImage = JSON.parse(imageData)
+            if (studentImage != null && imageTypes.includes(studentImage.type)) {
+                //convert the image file into base64 encoded binary file
+                image = new Buffer.from(studentImage.data, 'base64')
+                imageType = studentImage.type
+            }
+
+            // save the valid results
             student({
-                name,
-                email,
-                phone,
-                degree
+                name: req.body.name,
+                email: req.body.email,
+                phone: req.body.phone,
+                degree: req.body.degree,
+                image: image,
+                imageType: imageType
             }).save((err, data) => {
                 if (err) {
                     console.log('Error in database')
