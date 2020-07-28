@@ -19,7 +19,16 @@
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
         rel="stylesheet">
+    <style>
+        .cont {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 250px;
 
+        }
+    </style>
     <title>Create</title>
 </head>
 
@@ -40,7 +49,10 @@
                 <% } %>
                 <form action="/create" method="POST">
                     <h4 class="card-title mb-4 mt-1">Add Student</h4>
-                    <input required type="file" class="filepond" name="studentImage">
+                    <div class="cont">
+                        <label> Image *</label>
+                        <input required type="file" class="filepond" name="studentImage">
+                    </div>
                     <div class="form-group">
                         <label> Name</label>
                         <input name="name" class="form-control" placeholder="Full Name" type="name" required>
@@ -83,9 +95,9 @@
 
         // options for resixe the image
         FilePond.setOptions({
-            stylePanelAspectRatio: 129 / 78,
+            stylePanelAspectRatio: 78 / 78,
             imageResizeTargetWidth: 78,
-            imageResizeTargetHeight: 129
+            imageResizeTargetHeight: 78
         })
         FilePond.parse(document.body);
     </script>

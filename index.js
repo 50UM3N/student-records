@@ -9,7 +9,10 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080
 const mongoose = require('mongoose')
-const student = require('./schema')
+const student = require('./schema');
+const {
+    static
+} = require('express');
 const imageTypes = ['image/jpeg', 'image/png', 'images/gif']
 //connecting to the mongodb database
 mongoose.connect(process.env.MONGO_URL, {
@@ -24,7 +27,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 //setting up view engines to ejs
 app.set("view-engine", "ejs")
-
+app.use(express.static('public'))
 //use url encoder for get the data 
 app.use(express.urlencoded({
     limit: '10mb',

@@ -46,7 +46,7 @@
                     <h4 class="card-title mb-4 mt-1">Update Student</h4>
                     <div class="cont">
                         <label>New Image</label>
-                        <input type="file" class="filepond" value="<%= student.studentImage %> " name="studentImage">
+                        <input type="file" class="filepond" name="studentImage">
                     </div>
                     <input hidden type="text" name="id" value="<%=student.id%>">
                     <div class="form-group">
@@ -97,7 +97,7 @@
         FilePond.setOptions({
             stylePanelAspectRatio: 78 / 78,
             imageResizeTargetWidth: 78,
-            imageResizeTargetHeight: 129
+            imageResizeTargetHeight: 78
         })
         FilePond.parse(document.body);
     </script>
