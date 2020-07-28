@@ -17,47 +17,47 @@
     <title>Update</title>
 </head>
 
-<div class="sm" style="margin: 50px auto; max-width: 700px; ">
-    <div class="card">
-        <article class="card-body">
-            <a href="/student?email=<%=student.email%>" class="float-right btn btn-outline-primary">Cancel</a>
-            <% if(locals.messages.msg) {%>
-            <div class="alert alert-danger" role="alert">
-                <%= locals.messages.msg %>
-            </div>
-            <% } %>
-            <form action="/update" method="POST">
-                <h4 class="card-title mb-4 mt-1">Update Student</h4>
-                <input hidden type="text" name="id" value="<%=student.id%>">
-                <div class="form-group">
-                    <label> Name</label>
-                    <input name="name" class="form-control" placeholder="Full Name" type="name"
-                        value="<%=student.name%>" required>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input name="email" class="form-control" placeholder="Email" type="email" value="<%=student.email%>"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label>Phone No.</label>
-                    <input name="phone" class="form-control" placeholder="Phone No" type="phone"
-                        value="<%=student.phone%>" required>
-                </div>
-                <div class="form-group">
-                    <label>Degree</label>
-                    <input name="degree" class="form-control" placeholder="Degree" type="degree"
-                        value="<%=student.degree%>" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block"> Update </button>
-                </div>
-            </form>
-        </article>
-    </div>
-</div>
-
 <body>
+
+    <div class="sm" style="margin: 50px auto; max-width: 700px; ">
+        <div class="card">
+            <article class="card-body">
+                <a href="/student?email=<%=student.email%>" class="float-right btn btn-outline-primary">Cancel</a>
+                <% if(locals.messages.msg) {%>
+                <div class="alert alert-danger" role="alert">
+                    <%= locals.messages.msg %>
+                </div>
+                <% } %>
+                <form action="/update" method="POST">
+                    <h4 class="card-title mb-4 mt-1">Update Student</h4>
+                    <input hidden type="text" name="id" value="<%=student.id%>">
+                    <div class="form-group">
+                        <label> Name</label>
+                        <input name="name" class="form-control" placeholder="Full Name" type="name"
+                            value="<%=student.name%>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input name="email" class="form-control" placeholder="Email" type="email"
+                            value="<%=student.email%>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone No.</label>
+                        <input name="phone" class="form-control" placeholder="Phone No" type="phone"
+                            value="<%=student.phone%>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Degree</label>
+                        <input name="degree" class="form-control" placeholder="Degree" type="degree"
+                            value="<%=student.degree%>" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Update </button>
+                    </div>
+                </form>
+            </article>
+        </div>
+    </div>
 
 </body>
 

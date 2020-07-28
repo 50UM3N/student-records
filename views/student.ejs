@@ -17,27 +17,25 @@
     <title><%= student.name %> </title>
 </head>
 
-<div class="sm" style="margin: 50px auto; max-width: 700px; ">
-    <div class="card">
-        <article class="card-body" style="margin: 0 auto;">
-            <div class="card" style="width: 25rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <!-- display all the details about the student -->
-                    <h4 class="card-title"><%= student.name %> </h4>
-                    <p class="card-text"><b>Degree: </b><%= student.degree %> </p>
-                    <p class="card-text"><b>Email: </b><%= student.email %> </p>
-                    <p class="card-text"><b>Phone: </b><%= student.phone %> </p>
-                    <a href="/students" class="btn btn-primary">Back</a>
-                    <a href="/update?email=<%=student.email%>" class="btn btn-primary">Edit</a>
-                </div>
-            </div>
-        </article>
-    </div>
-</div>
-
 <body>
-
+    <div class="sm" style="margin: 50px auto; max-width: 700px; ">
+        <div class="card">
+            <article class="card-body" style="margin: 0 auto;">
+                <div class="card" style="width: 25rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <!-- display all the details about the student -->
+                        <h4 class="card-title"><%= student.name %> </h4>
+                        <p class="card-text"><b>Degree: </b><%= student.degree %> </p>
+                        <p class="card-text"><b>Email: </b><%= student.email %> </p>
+                        <p class="card-text"><b>Phone: </b><%= student.phone %> </p>
+                        <a href="/students" class="btn btn-primary">Back</a>
+                        <a href="/update?email=<%=student.email%>" class="btn btn-primary">Edit</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
 </body>
 
 </html>
