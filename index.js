@@ -61,7 +61,6 @@ app.post('/create', (req, res) => {
 
             //check that the is not send to the server
             let image, imageType
-            if (imageData == null) return
             const studentImage = JSON.parse(imageData)
             if (studentImage != null && imageTypes.includes(studentImage.type)) {
                 //convert the image file into base64 encoded binary file
@@ -95,27 +94,31 @@ app.post('/create', (req, res) => {
 
 app.post('/update', (req, res) => {
     //store the all data come form the form
-    const {
-        id,
-        name,
-        email,
-        phone,
-        degree
-    } = req.body
+    const imageData = req.body.studentImage
+
+    //check that the is not send to the server
+    let updateData = {}
+    if (imageData != null && imageData != undefined && imageData != '') {
+        const studentImage = JSON.parse(imageData)
+        if (studentImage != null && imageTypes.includes(studentImage.type)) {
+            //convert the image file into base64 encoded binary file
+            updateData.image = new Buffer.from(studentImage.data, 'base64')
+            updateData.imageType = studentImage.type
+        }
+    }
+    updateData.name = req.body.name
+    updateData.email = req.body.email
+    updateData.phone = req.body.phone
+    updateData.degree = req.body.degree
     //find the student with the help if id and update the details
-    student.findByIdAndUpdate(id, {
-        name: name,
-        email: email,
-        phone: phone,
-        degree: degree
-    }, (err, data) => {
+    student.findByIdAndUpdate(req.body.id, updateData, (err, data) => {
         if (err) {
             req.flash('msg', 'Server Error')
             res.redirect('/update')
         }
         if (data) {
             console.log("Update")
-            res.redirect(`/student?email=${email}`)
+            res.redirect(`/student?email=${req.body.email}`)
         } else {
             req.flash('msg', 'Somethings Wrong')
             console.log(" error")
@@ -145,7 +148,6 @@ app.get('/students', (req, res) => {
                 req.redirect('/')
             }
             if (data) {
-                console.log(data)
                 res.render('students.ejs', {
                     students: data,
                     searchedData: req.query
