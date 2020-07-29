@@ -10,9 +10,6 @@ const app = express()
 const port = process.env.PORT || 8080
 const mongoose = require('mongoose')
 const student = require('./schema');
-const {
-    static
-} = require('express');
 const imageTypes = ['image/jpeg', 'image/png', 'images/gif']
 //connecting to the mongodb database
 mongoose.connect(process.env.MONGO_URL, {
