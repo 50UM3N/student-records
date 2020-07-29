@@ -162,7 +162,7 @@ app.get('/students', (req, res) => {
     })
 })
 //individual student routes
-app.get('/student', checkParam, (req, res) => {
+app.get('/student', checkEntry, (req, res) => {
     //Get the student data
 
     student.findOne({
@@ -181,7 +181,7 @@ app.get('/create', (req, res) => {
 })
 
 //student update route
-app.get('/update', (req, res) => {
+app.get('/update', checkEntry, (req, res) => {
     //find one student that has to edit the info
     student.findOne({
         email: req.query.email
@@ -198,13 +198,11 @@ app.listen(port, e => {
     console.log('Listen on port ', port)
 })
 
-//middleware fore the unauthorized student chalking
-function checkParam(req, res, next) {
+//middleware for the unauthorized student chalking and update 
+function checkEntry(req, res, next) {
     if (req.query.email === undefined || req.query.email === '') {
         return res.redirect('/')
     } else {
         return next()
     }
 }
-
-//middleware for update student route 
