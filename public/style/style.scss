@@ -125,7 +125,7 @@
         top: 60px;
         right: 0px;
         transition: all 0.2s ease-out;
-        padding: 1.5rem 0 1.5rem 0;
+        padding: 1.5rem 0 1rem 0;
         .image-container {
           display: flex;
           flex-direction: column;
@@ -139,7 +139,6 @@
           p {
             color: #9a9da0;
             font-size: 0.85rem;
-            line-height: 0.4rem;
           }
           img {
             height: 80px;

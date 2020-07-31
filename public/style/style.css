@@ -177,7 +177,7 @@
   right: 0px;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-  padding: 1.5rem 0 1.5rem 0;
+  padding: 1.5rem 0 1rem 0;
 }
 
 .sk-nav .left-side-items .sk-drop-down-profile .sk-sub-menu .image-container {
@@ -205,7 +205,6 @@
 .sk-nav .left-side-items .sk-drop-down-profile .sk-sub-menu .image-container p {
   color: #9a9da0;
   font-size: 0.85rem;
-  line-height: 0.4rem;
 }
 
 .sk-nav .left-side-items .sk-drop-down-profile .sk-sub-menu .image-container img {
