@@ -76,7 +76,7 @@ npm run devStart
 or
 
 ```
-node index.js
+node server.js
 ```
 
 ## Preview
