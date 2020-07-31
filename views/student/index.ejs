@@ -1,0 +1,30 @@
+<div class="container" style="margin-top: 1rem;">
+    <!-- search box -->
+    <form action="/student" method="GET">
+        <div class="input-group mb-3" style="width: 100%; margin: 0 auto;">
+            <input type="text" class="form-control" placeholder="Search a student" name="name"
+                value="<%= searchedData.name %>">
+            <div class="input-group-append">
+                <button href="#" class="btn btn-outline-secondary" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <!-- render the all students details -->
+        <% students.forEach(student=>{ %>
+        <div class="col-sm-6">
+            <div class="card" style="margin-bottom: 1rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><%= student.name %> (<%=student.degree%> )</h5>
+                    <p class="card-text">
+                        <b>Email:</b> <%= student.email%>
+                        <br>
+                        <b>Phone:</b> <%= student.phone %>
+                    </p>
+                    <a href="student/<%=student.id%> " class="btn btn-primary">Visit</a>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
