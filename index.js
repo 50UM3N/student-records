@@ -10,13 +10,16 @@ const app = express()
 const port = process.env.PORT || 8080
 const mongoose = require('mongoose')
 const student = require('./schema');
+const expressEjsLayouts = require('express-ejs-layouts')
+const indexRoute = require('./routes/index')
+const allStudent = require('./routes/students')
 const imageTypes = ['image/jpeg', 'image/png', 'images/gif']
 //connecting to the mongodb database
 mongoose.connect(process.env.MONGO_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useFindAndModify: false
-    })
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+})
     .then(() => {
         console.log('Database Connected')
     });
@@ -24,21 +27,17 @@ mongoose.connect(process.env.MONGO_URL, {
 
 //setting up view engines to ejs
 app.set("view-engine", "ejs")
+app.set('layout', 'layouts/layout.ejs')
+app.use(expressEjsLayouts)
 app.use(express.static('public'))
 //use url encoder for get the data 
-app.use(express.urlencoded({
-    limit: '10mb',
-    extended: false
-}));
+app.use(express.urlencoded({ limit: '10mb', extended: false }));
 
 //use express session for use flash messuage
-app.use(session({
-    secret: 'soumenkhara',
-    saveUninitialized: true,
-    resave: true
-}))
+app.use(session({ secret: 'soumenkhara', saveUninitialized: true, resave: true }))
 //use flash for the small success and error message display in html
 app.use(flash())
+
 
 app.post('/create', (req, res) => {
     //store the image data to the variable
@@ -127,37 +126,15 @@ app.post('/update', (req, res) => {
     })
 })
 
+app.use('/', indexRoute)
+
+app.use('/student', allStudent)
 //main home rote
-app.get('/', (req, res) => {
+// app.get('/', (req, res) => {
+//     res.render('index.ejs', { title: 'S-Manager' })
+// })
 
-    res.render('index.ejs')
-})
 
-// all students and search route
-app.get('/students', (req, res) => {
-    let searchOption = {}
-    //check that search variable is active or note
-    if (req.body.name !== null && req.body.name !== '') {
-        searchOption.name = new RegExp(req.query.name, 'i')
-
-    }
-    //search for all data or for a specific kind for student/s
-    student.find(searchOption, (err, data) => {
-        if (data) {
-            if (err) {
-                req.redirect('/')
-            }
-            if (data) {
-                res.render('students.ejs', {
-                    students: data,
-                    searchedData: req.query
-                })
-            }
-        } else {
-            req.redirect('/')
-        }
-    })
-})
 //individual student routes
 app.get('/student', checkEntry, (req, res) => {
     //Get the student data
