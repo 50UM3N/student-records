@@ -3,111 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bootstrap cdn -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <!-- filepond stylesheet cdn -->
-    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
-    <style>
-        .container {
-            max-width: 1200px;
-        }
-
-        .cont {
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 250px;
-        }
-    </style>
+    <!-- Custom css  -->
+    <link rel="stylesheet" href="/style/style.css">
+    <!-- custom js -->
+    <script defer src="js/fileUpload.js"></script>
     <title><%= title %> </title>
 </head>
 
 <body>
-    <!--Navbar -->
-    <div class="sk-nav">
-        <div class="sk-container">
-            <a class="nav-brand" href="/">S-Manager</a>
-            <div class="left-side-items">
-                <div class="sk-drop-down">
-                    <a href="#">
-                        <div class="sk-cont">
-                            <div class="icon"></div>
-                        </div>
-                    </a>
-                    <ul class="sk-sub-menu">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Add New</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Students</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="sk-drop-down-profile">
-                    <a href="#">
-                        <div class="sk-cont-profile">
-                            <img class="profile-image" src="images/pic.png" alt="">
-                        </div>
-                    </a>
-                    <div class="sk-sub-menu">
-                        <div class="image-container">
-                            <img class="profile-image" src="images/pic.png" alt="">
-                            <h3>Soumen Khara</h3>
-                            <p>soumen2015.s.k@gmail.com</p>
-                        </div>
-                        <div class="menu-items">
-                            <a href="#" class="item">
-                                <div></div>
-                            </a>
-                            <a href="#" class="item">
-                                <div></div>
-                            </a>
-                            <a href="#" class="item">
-                                <div></div>
-                            </a>
-                        </div>
-                        <ul class="sub-menu">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Add New</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Students</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/.Navbar -->
     <%- body %>
-    <!-- filepond js cdn -->
-    <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
-
-    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
-    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 </body>
 
 </html>
