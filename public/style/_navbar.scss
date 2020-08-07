@@ -1,0 +1,212 @@
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+//universal drop down
+.menu-dropdown:focus-within .sub-menu-dropdown {
+  transform: scale(1) translate(0px, 0px);
+  opacity: 1;
+  pointer-events: all;
+}
+.sub-menu-dropdown {
+  --border-color: #d3d3d3;
+  --box-shadow-color: lightgray;
+  position: absolute;
+  z-index: 100;
+  width: 280px;
+  opacity: 0;
+  pointer-events: none;
+  background-color: var(--background-color);
+  border-radius: 0.25rem;
+  top: 65px;
+  transform: scale(0.97);
+  transition: all 0.2s ease-out;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 10px var(--box-shadow-color);
+  &::before {
+    position: absolute;
+    top: -11px;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: var(--background-color);
+    border-top-left-radius: 0.25rem;
+    transform: rotate(45deg);
+    border-left: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    z-index: -1;
+  }
+}
+
+// nav items exactly li and its a tag
+.nav-item {
+  position: relative;
+  height: 45px;
+  width: 100%;
+  padding-left: 1.5rem;
+  .nav-link {
+    position: inline-block;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--accent-color);
+    div {
+      flex: 1;
+      margin-left: 0.85rem;
+      //font-size: 14px;
+      font-weight: 400;
+    }
+    .nav-link-icon {
+      fill: var(--accent-color);
+      height: 17px;
+    }
+  }
+
+  &:hover {
+    border-radius: 0.25rem;
+    background-color: var(--shadow-color);
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  position: fixed;
+  height: 55px;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--background-color);
+  border-bottom: 3px solid var(--accent-color);
+  .nav-brand {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  .item-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .nav-menu {
+      position: relative;
+      height: 35px;
+      width: 45px;
+      border-radius: 0.3rem;
+      margin: 0 1rem;
+      .icon-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .menu-icon {
+          pointer-events: none;
+          width: 25px;
+          height: 25px;
+          background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3ECombined Shape Copy 2%3C/title%3E%3Cpath d='M2 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM9 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm7-14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%236c63ff' /%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+      // menu down down for navigator page
+      &:focus-within .nav-sub-menu {
+        transform: translate(0px, 0px);
+      }
+      .nav-sub-menu {
+        transform: translate(5px, -10px);
+        right: -57px;
+        list-style: none;
+        &::before {
+          right: 68px;
+        }
+      }
+    }
+    .profile-menu {
+      position: relative;
+      height: 40px;
+      width: 40px;
+      .sk-cont-profile {
+        top: 0;
+        position: absolute;
+        img {
+          border: 1px solid #9a9da0;
+          z-index: -1;
+          border-radius: 20px;
+          width: 39px;
+          height: 39px;
+        }
+      }
+      // custom styling for profile dropdown
+      &:focus-within .profile-sub-menu {
+        transform: translate(0px, 0px);
+      }
+      .profile-sub-menu {
+        transform: translate(10px, -10px);
+        right: 0px;
+        padding: 1.5rem 0 1rem 0;
+        .image-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .profile-image {
+            height: 80px;
+            border-radius: 50%;
+            border: 1px solid #9a9da0;
+            margin-bottom: 0.5rem;
+          }
+          h6 {
+            color: var(--main-color);
+            margin: 0.5rem;
+          }
+          p {
+            color: #9a9da0;
+            font-size: 12px;
+            margin-bottom: 1rem;
+          }
+        }
+        // profile dropdown list items
+        .profile-items {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .item {
+            margin: 0rem 0.5rem 0.5rem 0.5rem;
+            .profile-link-icon {
+              border: 1px solid var(--border-color);
+              border-radius: 50%;
+              padding: 5px;
+              fill: var(--accent-color);
+              height: 30px;
+              width: 30px;
+              transition: all 0.2s linear;
+              &:hover {
+                background-color: #c9c9c948;
+              }
+            }
+          }
+        }
+        .profile-list-menu {
+          list-style: none;
+          padding-left: 0;
+          margin: 0rem;
+          width: 100%;
+        }
+        &::before {
+          right: 10px;
+        }
+      }
+    }
+  }
+}

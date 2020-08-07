@@ -1,0 +1,31 @@
+/* the background color of the black action buttons */
+.filepond--file-action-button {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* the color of the focus ring */
+.filepond--file-action-button:hover,
+.filepond--file-action-button:focus {
+  box-shadow: 0 0 0 0.125em var(--accent-color);
+}
+
+/* the text color of the file status and info labels */
+.filepond--file {
+  color: white;
+}
+
+/* error state color */
+[data-filepond-item-state*="error"] .filepond--item-panel,
+[data-filepond-item-state*="invalid"] .filepond--item-panel {
+  background-color: #db3a34;
+}
+
+/* bordered drop area */
+.filepond--panel-root {
+  background-color: #fafafa;
+  border: 1px solid #e1e4e8;
+}
+
+.filepond--root {
+  margin-top: 14px;
+}
