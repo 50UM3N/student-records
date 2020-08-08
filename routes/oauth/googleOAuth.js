@@ -11,8 +11,13 @@ route.get(
 );
 
 // google callback route
-route.get("/callback", passport.authenticate("google"), (req, res) => {
-  res.send(req.user);
-});
+route.get(
+  "/callback",
+  passport.authenticate("google", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true,
+  })
+);
 
 module.exports = route;

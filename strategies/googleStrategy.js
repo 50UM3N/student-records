@@ -9,7 +9,32 @@ function googleAuthenticator(passport, user) {
         callbackURL: "http://localhost:8080/auth/google/callback",
       },
       (accessToken, refreshToken, profile, done) => {
-        console.log(profile);
+        user.findOne({ email: profile._json.email }, (err, data) => {
+          if (data) {
+            if (data.authType == "google") {
+              return done(null, data);
+            } else {
+              return done(null, false, {
+                message: `User already exist use ${data.authType} login`,
+              });
+            }
+          } else {
+            user({
+              email: profile._json.email,
+              name: profile._json.name,
+              authType: "google",
+              authId: profile._json.sub,
+            }).save((err, data) => {
+              if (err) {
+                console.log("Error in database");
+                return done(err);
+              }
+              if (data) {
+                return done(null, data);
+              }
+            });
+          }
+        });
       }
     )
   );

@@ -16,8 +16,8 @@
             <!-- form single email input -->
             <div class="form-input-group">
                 <label>Email Address</label>
-                <input required class="form-input" type="email" id="email" name="email" placeholder="Email"
-                    value="<%= user.email %>">
+                <input <% if(user.authType!=='email/password'){%><%= "disabled" %><% } %> required class="form-input"
+                    type="email" id="email" name="email" placeholder="Email" value="<%= user.email %>">
             </div>
             <!-- form input button -->
             <input class="form-button" type="submit" value="CHANGE">
@@ -63,12 +63,12 @@
             </div>
             <div class="form-input-group">
                 <label>Email</label>
-                <input disabled required class="form-input" value="soumen2015.s.k@gmail.com">
+                <input disabled required class="form-input" value="<%= user.email %>">
             </div>
             <!-- form single email input -->
             <div class="form-input-group">
                 <label>Date Created</label>
-                <input disabled required class="form-input" value="june2020">
+                <input disabled required class="form-input" value="<%= user.date%>">
             </div>
         </div>
         <% } else if (user.authType=="email/password") { %>
