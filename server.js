@@ -17,11 +17,19 @@ const studentCreate = require("./routes/students/create");
 const studentUpdate = require("./routes/students/update");
 const userSignIn = require("./routes/users/login");
 const user = require("./models/user_schema");
-const authenticator = require("./routes/users/localstrategy");
+const authenticator = require("./strategies/localStrategy");
+const googleAuthenticator = require("./strategies/googleStrategy");
+const githubAuthenticator = require("./strategies/githubStrategy");
 const userSignUp = require("./routes/users/signup");
 const userLogout = require("./routes/users/logout");
 const userAdmin = require("./routes/admin/admin");
+const oauthGoogle = require("./routes/oauth/googleOAuth");
+const oauthGitHub = require("./routes/oauth/githubOAuth");
 
+//initialize github authenticator
+githubAuthenticator(passport, user);
+//initialize google authenticator
+googleAuthenticator(passport, user);
 //connecting to the mongodb database
 mongoose
   .connect(process.env.MONGO_LOCAL_URL, {
@@ -82,6 +90,11 @@ app.use("/logout", userLogout);
 // admin route
 app.use("/admin", userAdmin);
 
+// google oauth route
+app.use("/auth/google", oauthGoogle);
+
+// github oauth route
+app.use("/auth/github", oauthGitHub);
 //starting the server
 app.listen(PORT, (e) => {
   console.log("Listen on port ", PORT);

@@ -11,7 +11,22 @@ const user = new mongoose.Schema({
   },
   password: {
     type: String,
-    require: true,
+  },
+  authType: {
+    type: String,
+    default: null,
+  },
+  authId: {
+    type: String,
+    default: null,
+  },
+  authUsername: {
+    type: String,
+    default: null,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
   },
   role: {
     type: String,

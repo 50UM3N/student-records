@@ -24,6 +24,7 @@ route.post("/", (req, res) => {
         name: name,
         password: password,
         role: ROLE.USER,
+        authType: "email/password",
       }).save((err, data) => {
         if (err) {
           console.log("Error in database");
