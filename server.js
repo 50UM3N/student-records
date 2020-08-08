@@ -25,6 +25,7 @@ const userLogout = require("./routes/users/logout");
 const userAdmin = require("./routes/admin/admin");
 const oauthGoogle = require("./routes/oauth/googleOAuth");
 const oauthGitHub = require("./routes/oauth/githubOAuth");
+const userInfo = require("./routes/users/user");
 
 //initialize github authenticator
 githubAuthenticator(passport, user);
@@ -87,6 +88,8 @@ app.use("/signup", userSignUp);
 //logout route
 app.use("/logout", userLogout);
 
+// user info route
+app.use("/user", userInfo);
 // admin route
 app.use("/admin", userAdmin);
 

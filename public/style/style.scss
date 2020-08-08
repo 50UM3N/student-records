@@ -23,7 +23,7 @@ body {
 @import "navbar";
 @import "form";
 .bottom-border {
-  padding-bottom: 4px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #e1e4e8;
 }
 .box {
@@ -37,7 +37,20 @@ body {
   background-color: var(--background-color);
   color: var(--main-color);
   .box-heading {
-    margin-bottom: 10px;
+    margin-bottom: 25px;
+  }
+  .box-icon-headline {
+    display: flex;
+    align-items: center;
+    .box-headline-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 0.5rem;
+      fill: var(--accent-color);
+    }
+    .h111 {
+      line-height: 1rem;
+    }
   }
 }
 form {
@@ -47,4 +60,14 @@ form {
   width: 100%;
   max-width: 250px;
   margin: 0px auto;
+}
+.from-profile-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 150px;
+    border-radius: 50%;
+  }
 }
