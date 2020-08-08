@@ -21,7 +21,8 @@
             <div class="form-input-group">
                 <label>Email Address</label>
                 <input <% if(user.authType!=='email/password'){%><%= "disabled" %><% } %> required class="form-input"
-                    type="email" id="email" name="email" placeholder="Email" value="<%= user.email %>">
+                    inputmode="email" type="email" id="email" name="email" placeholder="Email"
+                    value="<%= user.email %>">
             </div>
             <!-- form input button -->
             <input class="form-button" type="submit" value="CHANGE">
