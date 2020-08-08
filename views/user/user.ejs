@@ -5,7 +5,11 @@
         <!-- Form -->
         <form action="">
             <div class="from-profile-image">
-                <img src="images/pic.png" alt="">
+                <% if(user.thumbnail){ %>
+                <img src="<%= user.thumbnail%>" alt="profile image">
+                <% } else { %>
+                <img src="images/pic.png" alt="profile image">
+                <% } %>
             </div>
             <!-- College name -->
             <div class="form-input-group">

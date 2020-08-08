@@ -24,6 +24,7 @@ function googleAuthenticator(passport, user) {
               name: profile._json.name,
               authType: "google",
               authId: profile._json.sub,
+              thumbnail: profile._json.picture,
             }).save((err, data) => {
               if (err) {
                 console.log("Error in database");

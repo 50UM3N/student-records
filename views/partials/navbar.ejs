@@ -60,7 +60,15 @@
             <div class="menu-dropdown profile-menu">
                 <a href="#">
                     <div class="sk-cont-profile">
-                        <img class="profile-image" src="images/pic.png" alt="">
+                        <% if(user){ %>
+                        <% if(user.thumbnail){ %>
+                        <img class="profile-image" src="<%= user.thumbnail%>" alt="profile image">
+                        <% } else { %>
+                        <img class="profile-image" src="images/pic.png" alt="profile image">
+                        <% } %>
+                        <% } else { %>
+                        <img class="profile-image" src="images/pic.png" alt="profile image">
+                        <% } %>
                     </div>
                 </a>
 
@@ -68,7 +76,11 @@
                 <div class="sub-menu-dropdown profile-sub-menu">
                     <% if(user){ %>
                     <div class="image-container">
-                        <img class="profile-image" src="images/pic.png" alt="">
+                        <% if(user.thumbnail){ %>
+                        <img class="profile-image" src="<%= user.thumbnail%>" alt="profile image">
+                        <% } else { %>
+                        <img class="profile-image" src="images/pic.png" alt="profile image">
+                        <% } %>
                         <h6><%= user.name %> </h6>
                         <p><%= user.email %> </p>
                     </div>

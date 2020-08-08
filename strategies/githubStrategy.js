@@ -25,6 +25,7 @@ function githubAuthenticator(passport, user) {
               authType: "github",
               authId: profile._json.id,
               authUsername: profile._json.login,
+              thumbnail: profile._json.avatar_url,
             }).save((err, data) => {
               if (err) {
                 console.log("Error in database");
