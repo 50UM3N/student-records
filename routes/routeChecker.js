@@ -1,6 +1,5 @@
 const ROLE = require("../models/role");
 
-// check if the user is authorized to a route
 function authorize(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
