@@ -1,6 +1,6 @@
 <%- include('../partials/navbar.ejs') %>
 <div class="container">
-    <div class="box">
+    <div class="box headline-border">
         <h6 class="box-heading bottom-border">Profile</h6>
         <!-- Form -->
         <form action="">
@@ -29,8 +29,8 @@
         </form>
         <!-- Form -->
     </div>
-    <div class="box">
-        <h6 class="box-heading bottom-border">Login Method</h6>
+    <div class="box headline-border">
+        <h6 class="box-heading">Login Method</h6>
         <% if (user.authType=="github") { %>
         <!-- Github login credential box -->
         <div class="box">

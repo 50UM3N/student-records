@@ -26,15 +26,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
   .oauth-anchor {
     position: relative;
     display: inline-block;
     flex: 1;
-    margin: 0rem 0.5rem;
     text-decoration: none;
     border-radius: 0.25rem;
     transition: all 0.2s linear;
-    margin-bottom: 1rem;
+    &:first-child {
+      margin-right: 5px;
+    }
+    &:last-child {
+      margin-left: 5px;
+    }
     .oauth-button {
       position: relative;
       display: flex;
@@ -46,7 +51,7 @@
       border-radius: 0.25rem;
       text-align: center;
       line-height: 250%;
-      padding: 0rem 0.5rem;
+      padding: 6px 12px;
       color: white;
       transition: all 0.2s linear;
       .oauth-icon {
@@ -78,7 +83,7 @@
 // form action button
 .form-button {
   height: 38px;
-  padding: 0px 1rem;
+  padding: 6px 12px;
   outline: none;
   background-color: var(--accent-color);
   color: var(--background-color);
@@ -87,7 +92,6 @@
   font-size: 14px;
   font-weight: 500;
   transition: all 0.2s linear;
-  margin: 0.5rem 0rem 0.25rem 0.1rem;
   cursor: pointer;
   &:hover {
     background-color: var(--button-hover-color);
@@ -160,16 +164,16 @@
 .form-input-group {
   display: flex;
   flex-direction: column;
-  margin: 1.5rem 0rem;
+  margin-bottom: 1rem;
   .form-input {
     height: 38px;
     width: 100%;
     font-size: 1rem;
     font-weight: 400;
-    padding: 0rem 0.6rem;
+    padding: 6px 12px;
     outline: none;
     border: 1px solid #d5d9dd;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     transition: all 0.2s linear;
     background-color: #fafafa;
     &:focus {
@@ -194,23 +198,20 @@
 }
 // form labels
 label {
-  margin-left: 0.1rem;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 form {
   flex: 1;
   height: auto;
   padding: 1.5rem;
-
   .form-branding {
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
     color: var(--accent-color);
   }
   .form-name {
-    margin-bottom: 1.5rem;
-    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
   }
   .form-text-group {
     display: flex;
@@ -250,6 +251,14 @@ form {
     flex-direction: column;
     .oauth-anchor {
       width: 100%;
+      &:first-child {
+        margin: 0;
+        margin-bottom: 5px;
+      }
+      &:last-child {
+        margin: 0;
+        margin-top: 5px;
+      }
     }
   }
 }
