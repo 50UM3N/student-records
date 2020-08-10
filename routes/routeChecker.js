@@ -18,10 +18,8 @@ function notAuthorize(req, res, next) {
 // check the user is admin or not
 function isAdmin(req, res, next) {
   if (req.isAuthenticated() && req.user.role == ROLE.ADMIN) {
-    console.log("admin");
     return next();
   }
-  console.log("Not admin");
   return res.redirect("/");
 }
 module.exports = {
