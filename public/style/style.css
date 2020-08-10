@@ -609,7 +609,6 @@ body {
 
 .container-frm {
   position: absolute;
-  width: 100%;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -619,8 +618,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 1.25rem;
-  margin: auto auto;
+  margin-top: 1rem;
 }
 
 .form-alert {
@@ -901,6 +899,12 @@ form {
   padding: 0;
 }
 
+.form-file-input {
+  width: 100%;
+  max-width: 250px;
+  margin: 0px auto;
+}
+
 .from-profile-image {
   width: 100%;
   display: -webkit-box;
@@ -987,6 +991,15 @@ form {
   }
   th {
     width: 65px;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    padding: 0rem 0.5rem;
+  }
+  .box {
+    margin: 0.5rem auto;
   }
 }
 /*# sourceMappingURL=style.css.map */

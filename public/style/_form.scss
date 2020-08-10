@@ -72,13 +72,11 @@
 // form container
 .container-frm {
   position: absolute;
-  width: 100%;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   justify-content: center;
-  padding: 1.25rem;
-  margin: auto auto;
+  margin-top: 1rem;
 }
 
 // Alert message box
