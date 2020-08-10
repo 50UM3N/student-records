@@ -1,4 +1,5 @@
 const githubStrategy = require("passport-github2").Strategy;
+const ROLE = require("../models/role");
 
 function githubAuthenticator(passport, user) {
   passport.use(
@@ -26,6 +27,7 @@ function githubAuthenticator(passport, user) {
               authId: profile._json.id,
               authUsername: profile._json.login,
               thumbnail: profile._json.avatar_url,
+              role: ROLE.USER,
             }).save((err, data) => {
               if (err) {
                 console.log("Error in database");

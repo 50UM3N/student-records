@@ -1,4 +1,5 @@
 const googleStrategy = require("passport-google-oauth2").Strategy;
+const ROLE = require("../models/role");
 
 function googleAuthenticator(passport, user) {
   passport.use(
@@ -25,6 +26,7 @@ function googleAuthenticator(passport, user) {
               authType: "google",
               authId: profile._json.sub,
               thumbnail: profile._json.picture,
+              role: ROLE.USER,
             }).save((err, data) => {
               if (err) {
                 console.log("Error in database");
