@@ -1,7 +1,7 @@
 <%- include('../partials/navbar.ejs') %>
-<div class="container" style="margin-top: 1rem; max-width: 1000px;">
+<div class="container center">
     <!-- search box -->
-    <form action="/student" method="GET">
+    <!-- <form action="/student" method="GET">
         <div class="input-group mb-3" style="width: 100%; margin: 0 auto;">
             <input type="text" class="form-control" placeholder="Search a student" name="name"
                 value="<%= searchedData.name %>">
@@ -9,23 +9,188 @@
                 <button href="#" class="btn btn-outline-secondary" type="submit">Search</button>
             </div>
         </div>
-    </form>
-    <div class="row">
-        <!-- render the all students details -->
-        <% students.forEach(student=>{ %>
-        <div class="col-sm-6">
-            <div class="card" style="margin-bottom: 1rem;">
-                <div class="card-body">
-                    <h5 class="card-title"><%= student.name %> (<%=student.degree%> )</h5>
-                    <p class="card-text">
-                        <b>Email:</b> <%= student.email%>
-                        <br>
-                        <b>Phone:</b> <%= student.phone %>
+    </form> -->
+    <!-- <div class="card">
+        <div class="left">
+            <img class="card-logo" src="/images/pic.png" alt="">
+        </div>
+        <div class="right">
+            <div class="right-top">
+                <div class="content-container">
+                    <h6 class="card-headline">Soumen Khara</h6>
+                    <p class="body2 card-body wrapping">
+                        <b>Course:</b> B.Sc-CMSA(HONS)<br>
+                        <b>Email:</b> soumen2015.s.k@gmail.com<br>
+                        <b>Phone:</b> 89101031XX
                     </p>
-                    <a href="student/<%=student.id%> " class="btn btn-primary">Visit</a>
+                </div>
+
+                <p class="overline card-overline">Mouse over the card form more info</p>
+            </div>
+            <div class="right-bottom">
+                <div class="fill-container">
+                    <div class="content-container">
+                        <h6 class="card-headline">Soumen Khara</h6>
+                        <p class="body2 card-body">Lorem </p>
+                    </div>
+                    <div class="button-container">
+                        <a class="anchor-button card-button a-small" href="#"><span>GO TO</span></a>
+                        <a class="anchor-button card-button a-small" href="#"><span>GO TO</span></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <% }) %>
+    </div> -->
+
+
+    <div class="row">
+        <div class="md-6">
+            <div class="card">
+                <div class="left">
+                    <img class="card-logo" src="/images/pic.png" alt="">
+                </div>
+                <div class="right">
+                    <div class="right-top">
+                        <div class="content-container">
+                            <h6 class="card-headline">Soumen Khara</h6>
+                            <p class="body2 card-body wrapping">
+                                <b>Course:</b> B.Sc-CMSA(HONS)<br>
+                                <b>Email:</b> soumen2015.s.k@gmail.com<br>
+                                <b>Phone:</b> 89101031XX
+                            </p>
+                        </div>
+
+                        <p class="overline card-overline">Mouse over the card form more info</p>
+                    </div>
+                    <div class="right-bottom">
+                        <div class="fill-container">
+                            <div class="content-container">
+                                <h6 class="card-headline">Soumen Khara</h6>
+                                <p class="body2 card-body">Lorem </p>
+                            </div>
+                            <div class="button-container">
+                                <a class="anchor-button card-button a-small" href="#"><span>GO TO</span></a>
+                                <a class="anchor-button card-button a-small" href="#"><span>GO TO</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md-6">
+            <div class="card">
+                <div class="left">
+                    <img class="card-logo" src="/images/pic.png" alt="">
+                </div>
+                <div class="right">
+                    <div class="right-top">
+                        <div class="content-container">
+                            <h6 class="card-headline">Soumen Khara</h6>
+                            <p class="body2 card-body wrapping">
+                                <b>Course:</b> B.Sc-CMSA(HONS)<br>
+                                <b>Email:</b> soumen2015.s.k@gmail.com<br>
+                                <b>Phone:</b> 89101031XX
+                            </p>
+                        </div>
+
+                        <p class="overline card-overline">Mouse over the card form more info</p>
+                    </div>
+                    <div class="right-bottom">
+                        <div class="fill-container">
+                            <div class="content-container">
+                                <h6 class="card-headline">Soumen Khara</h6>
+                                <p class="body2 card-body">Lorem </p>
+                            </div>
+                            <div class="button-container">
+                                <a class="anchor-button card-button a-small" href="#"><span>GO TO</span></a>
+                                <a class="anchor-button card-button a-small" href="#"><span>GO TO</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md-6">
+            <div class="card">
+                <div class="left">
+                    <img class="card-logo" src="/images/pic.png" alt="">
+                </div>
+                <div class="right">
+                    <div class="right-top">
+                        <div class="content-container">
+                            <h6 class="card-headline">Soumen Khara</h6>
+                            <p class="body2 card-body wrapping">
+                                <b>Course:</b> B.Sc-CMSA(HONS)<br>
+                                <b>Email:</b> soumen2015.s.k@gmail.com<br>
+                                <b>Phone:</b> 89101031XX
+                            </p>
+                        </div>
+
+                        <p class="overline card-overline">Mouse over the card form more info</p>
+                    </div>
+                    <div class="right-bottom">
+                        <div class="fill-container">
+                            <div class="content-container">
+                                <h6 class="card-headline">Soumen Khara</h6>
+                                <p class="body2 card-body">Lorem </p>
+                            </div>
+                            <div class="button-container">
+                                <a class="anchor-button card-button a-small" href="#"><span>GO TO</span></a>
+                                <a class="anchor-button card-button a-small" href="#"><span>GO TO</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md-6">
+            <div class="card">
+                <div class="left">
+                    <img class="card-logo" src="/images/pic.png" alt="">
+                </div>
+                <div class="right">
+                    <div class="right-top">
+                        <div class="content-container">
+                            <h6 class="card-headline">Soumen Khara</h6>
+                            <p class="body2 card-body wrapping">
+                                <b>Course:</b> B.Sc-CMSA(HONS)<br>
+                                <b>Email:</b> soumen2015.s.k@gmail.com<br>
+                                <b>Phone:</b> 89101031XX
+                            </p>
+                        </div>
+
+                        <p class="overline card-overline">Mouse over the card form more info</p>
+                    </div>
+                    <div class="right-bottom">
+                        <div class="fill-container">
+                            <div class="content-container">
+                                <h6 class="card-headline">Soumen Khara</h6>
+                                <p class="body2 card-body">Lorem </p>
+                            </div>
+                            <div class="button-container">
+                                <a class="anchor-button card-button a-small" href="#"><span>GO TO</span></a>
+                                <a class="anchor-button card-button a-small" href="#"><span>GO TO</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- render the all students details -->
+        <!-- <% students.forEach(student=>{ %>
+        <% }) %> -->
     </div>
 </div>
+<script defer>
+    window.onload = load();
+    window.onresize = load();
+    function load() {
+        if (window.innerWidth <= 432) {
+            const cards = document.querySelectorAll('.card')
+            console.log(window.innerWidth - 2 * 8)
+            cards.forEach(card => {
+                card.style.setProperty('--card-width', window.innerWidth - 2 * 16 + 'px')
+            })
+        }
+    }
+</script>

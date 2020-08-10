@@ -1,0 +1,122 @@
+.card {
+  --card-height: 170px;
+  --card-width: 400px;
+  --left-cont-width: 135px;
+  --right-container-color: var(--accent-color);
+  display: flex;
+  width: 100%;
+  width: var(--card-width);
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #c3c3ff;
+  // card headline
+  .card-overline {
+    text-align: right;
+    font-family: "Nunito", sans-serif;
+  }
+  .card-headline {
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+  }
+  // Card body paragraph
+  .card-body {
+    margin-bottom: 1rem;
+  }
+  // Card logo
+  .card-logo {
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  // card left container
+  .left {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    height: var(--card-height);
+    width: var(--left-cont-width);
+    background-color: var(--right-container-color);
+    z-index: 2;
+  }
+  .wrapping {
+    width: calc(var(--card-width) - var(--left-cont-width) -1rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  // card right container
+  .right {
+    position: relative;
+    height: var(--card-height);
+    width: calc(var(--card-width) - var(--left-cont-width));
+    .right-top {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: var(--card-height);
+      width: calc(var(--card-width) - var(--left-cont-width));
+      padding: 1rem;
+      background-color: var(--background-color);
+      .card-headline,
+      .card-body {
+        color: var(--main-color);
+      }
+    }
+    .right-bottom {
+      position: absolute;
+      top: 0;
+      height: var(--card-height);
+      width: 0px;
+      background-color: var(--right-container-color);
+      overflow: hidden;
+      transition: all 0.3s linear;
+      .card-headline,
+      .card-body {
+        color: white;
+      }
+    }
+    .fill-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: calc(var(--card-width) - var(--left-cont-width));
+      height: calc(100% - 2rem);
+      margin: 1rem 0rem;
+      padding: 0rem 1rem;
+      border-left: 1px solid white;
+    }
+  }
+  &:hover {
+    .right {
+      .right-bottom {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 440px) {
+  .card {
+    --left-cont-width: 115px;
+    .card-logo {
+      width: 90px;
+    }
+  }
+}
+@media (max-width: 340px) {
+  .card {
+    --left-cont-width: 100px;
+    .card-logo {
+      width: 80px;
+    }
+  }
+}

@@ -24,7 +24,7 @@ body {
 @import "button";
 @import "navbar";
 @import "form";
-
+@import "card";
 .box {
   position: relative;
   width: 100%;
@@ -140,3 +140,30 @@ form {
   }
 }
 // card
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.md-6 {
+  flex: 1;
+  margin: 0rem 0.5rem;
+  margin-bottom: 1rem;
+}
+.row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 832px;
+}
+@media (max-width: 864px) {
+  .md-6 {
+    // flex: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

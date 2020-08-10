@@ -845,6 +845,162 @@ form .form-text-group a:hover {
   }
 }
 
+.card {
+  --card-height: 170px;
+  --card-width: 400px;
+  --left-cont-width: 135px;
+  --right-container-color: var(--accent-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  width: var(--card-width);
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px #c3c3ff;
+          box-shadow: 0 0 10px #c3c3ff;
+}
+
+.card .card-overline {
+  text-align: right;
+  font-family: "Nunito", sans-serif;
+}
+
+.card .card-headline {
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+}
+
+.card .card-body {
+  margin-bottom: 1rem;
+}
+
+.card .card-logo {
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.card .left {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  height: var(--card-height);
+  width: var(--left-cont-width);
+  background-color: var(--right-container-color);
+  z-index: 2;
+}
+
+.card .wrapping {
+  width: calc(var(--card-width) - var(--left-cont-width) -1rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card .right {
+  position: relative;
+  height: var(--card-height);
+  width: calc(var(--card-width) - var(--left-cont-width));
+}
+
+.card .right .right-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: var(--card-height);
+  width: calc(var(--card-width) - var(--left-cont-width));
+  padding: 1rem;
+  background-color: var(--background-color);
+}
+
+.card .right .right-top .card-headline,
+.card .right .right-top .card-body {
+  color: var(--main-color);
+}
+
+.card .right .right-bottom {
+  position: absolute;
+  top: 0;
+  height: var(--card-height);
+  width: 0px;
+  background-color: var(--right-container-color);
+  overflow: hidden;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.card .right .right-bottom .card-headline,
+.card .right .right-bottom .card-body {
+  color: white;
+}
+
+.card .right .fill-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(var(--card-width) - var(--left-cont-width));
+  height: calc(100% - 2rem);
+  margin: 1rem 0rem;
+  padding: 0rem 1rem;
+  border-left: 1px solid white;
+}
+
+.card:hover .right .right-bottom {
+  width: 100%;
+}
+
+.button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 440px) {
+  .card {
+    --left-cont-width: 115px;
+  }
+  .card .card-logo {
+    width: 90px;
+  }
+}
+
+@media (max-width: 340px) {
+  .card {
+    --left-cont-width: 100px;
+  }
+  .card .card-logo {
+    width: 80px;
+  }
+}
+
 .box {
   position: relative;
   width: 100%;
@@ -1000,6 +1156,57 @@ form {
   }
   .box {
     margin: 0.5rem auto;
+  }
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+}
+
+.md-6 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0rem 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.row {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 832px;
+}
+
+@media (max-width: 864px) {
+  .md-6 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 /*# sourceMappingURL=style.css.map */
