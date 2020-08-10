@@ -80,24 +80,7 @@
   padding: 1.25rem;
   margin: auto auto;
 }
-// form action button
-.form-button {
-  height: 38px;
-  padding: 6px 12px;
-  outline: none;
-  background-color: var(--accent-color);
-  color: var(--background-color);
-  border: none;
-  border-radius: 0.25rem;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.2s linear;
-  cursor: pointer;
-  &:hover {
-    background-color: var(--button-hover-color);
-    box-shadow: 0 0 10px var(--button-hover-shadow);
-  }
-}
+
 // Alert message box
 .form-alert {
   --color1: var(--alert-container-color);

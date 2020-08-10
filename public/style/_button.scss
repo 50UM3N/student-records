@@ -1,0 +1,63 @@
+// form action button
+.form-button {
+  height: 38px;
+  padding: 6px 12px;
+  outline: none;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: 0 0 10px var(--button-hover-shadow);
+  }
+}
+// Anchor button defaults
+.anchor-button {
+  --b-color: var(--accent-color);
+  --b-shadow: var(--button-hover-shadow);
+  --b-hover: var(--button-hover-color);
+  --b-height: 36px;
+  --b-padding: 6px 12px;
+  --b-font-size: 16px;
+  display: inline-block;
+  height: var(--b-height);
+  padding: var(--b-padding);
+  font-size: var(--b-font-size);
+  background-color: var(--b-color);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  margin: 0px 8px;
+  transition: all 0.2s linear;
+  &:hover {
+    background-color: var(--b-hover);
+    box-shadow: 0 0 5px var(--b-shadow);
+  }
+}
+// anchor button small
+.a-small {
+  --b-height: 31px;
+  --b-padding: 4px 8px;
+  --b-font-size: 14px;
+}
+// anchor button large
+.a-large {
+  --b-height: 48px;
+  --b-padding: 8px 16px;
+  --b-font-size: 20px;
+}
+// anchor button for card
+.card-button {
+  --b-color: var(--main-color);
+  --b-shadow: #3e3d55;
+  --b-hover: #202030;
+}

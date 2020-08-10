@@ -32,17 +32,21 @@ route.get("/", (req, res) => {
 
 //individual student
 route.get("/:id", (req, res) => {
-  student.findById(req.params.id, (err, data) => {
-    if (err) {
-      res.redirect("/student");
-    }
-    if (data) {
-      res.render("student/student.ejs", {
-        title: data.name,
-        student: data,
-        user: req.user,
-      });
-    }
+  // student.findById(req.params.id, (err, data) => {
+  //   if (err) {
+  //     res.redirect("/student");
+  //   }
+  //   if (data) {
+  //     res.render("student/student.ejs", {
+  //       title: data.name,
+  //       student: data,
+  //       user: req.user,
+  //     });
+  //   }
+  // });
+  res.render("student/student.ejs", {
+    title: "ss",
+    user: req.user,
   });
 });
 

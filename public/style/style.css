@@ -139,6 +139,81 @@ body {
   height: 55px;
 }
 
+.form-button {
+  height: 38px;
+  padding: 6px 12px;
+  outline: none;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 14px;
+  font-weight: 500;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: var(--button-hover-color);
+  -webkit-box-shadow: 0 0 10px var(--button-hover-shadow);
+          box-shadow: 0 0 10px var(--button-hover-shadow);
+}
+
+.anchor-button {
+  --b-color: var(--accent-color);
+  --b-shadow: var(--button-hover-shadow);
+  --b-hover: var(--button-hover-color);
+  --b-height: 36px;
+  --b-padding: 6px 12px;
+  --b-font-size: 16px;
+  display: inline-block;
+  height: var(--b-height);
+  padding: var(--b-padding);
+  font-size: var(--b-font-size);
+  background-color: var(--b-color);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.25rem;
+  margin: 0px 8px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.anchor-button:hover {
+  background-color: var(--b-hover);
+  -webkit-box-shadow: 0 0 5px var(--b-shadow);
+          box-shadow: 0 0 5px var(--b-shadow);
+}
+
+.a-small {
+  --b-height: 31px;
+  --b-padding: 4px 8px;
+  --b-font-size: 14px;
+}
+
+.a-large {
+  --b-height: 48px;
+  --b-padding: 8px 16px;
+  --b-font-size: 20px;
+}
+
+.card-button {
+  --b-color: var(--main-color);
+  --b-shadow: #3e3d55;
+  --b-hover: #202030;
+}
+
 .nav-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -548,27 +623,6 @@ body {
   margin: auto auto;
 }
 
-.form-button {
-  height: 38px;
-  padding: 6px 12px;
-  outline: none;
-  background-color: var(--accent-color);
-  color: var(--background-color);
-  border: none;
-  border-radius: 0.25rem;
-  font-size: 14px;
-  font-weight: 500;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-  cursor: pointer;
-}
-
-.form-button:hover {
-  background-color: var(--button-hover-color);
-  -webkit-box-shadow: 0 0 10px var(--button-hover-shadow);
-          box-shadow: 0 0 10px var(--button-hover-shadow);
-}
-
 .form-alert {
   --color1: var(--alert-container-color);
   --color2: var(--alert-color);
@@ -847,12 +901,6 @@ form {
   padding: 0;
 }
 
-.form-file-input {
-  width: 100%;
-  max-width: 250px;
-  margin: 0px auto;
-}
-
 .from-profile-image {
   width: 100%;
   display: -webkit-box;
@@ -869,5 +917,76 @@ form {
 .from-profile-image img {
   width: 150px;
   border-radius: 50%;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.content .card-profile-image {
+  width: 200px;
+  border: 2px solid lightgray;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.content .profile-head {
+  margin-bottom: 0.5rem;
+}
+
+.content .paragraphs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.content .student-table {
+  border-collapse: collapse;
+  text-align: left;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 250px;
+          flex: 1 0 250px;
+  margin-bottom: 3px;
+  font-size: 1rem;
+}
+
+.content .student-table td,
+.content .student-table th {
+  padding: 0.2rem 0.2rem 0.2rem 0;
+}
+
+.content .student-table th {
+  width: 90px;
+}
+
+.button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (max-width: 400px) {
+  table {
+    font-size: 14px;
+  }
+  th {
+    width: 65px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

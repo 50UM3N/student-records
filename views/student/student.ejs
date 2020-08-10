@@ -1,15 +1,43 @@
 <%- include('../partials/navbar.ejs') %>
-<div class="container" style="margin-top: 20px ;">
-    <div class="card" style="width: 100%; max-width: 400px; margin: 0 auto;">
-        <img class="card-img-top" src="<%= student.studentImage %> " alt="Card image cap">
-        <div class="card-body">
-            <!-- display all the details about the student -->
-            <h4 class="card-title"><%= student.name %> </h4>
-            <p class="card-text"><b>Degree: </b><%= student.degree %> </p>
-            <p class="card-text"><b>Email: </b><%= student.email %> </p>
-            <p class="card-text"><b>Phone: </b><%= student.phone %> </p>
-            <a href="/student" class="btn btn-primary">Back</a>
-            <a href="/update/<%=student.id%>" class="btn btn-primary">Edit</a>
+<div class="box" style="max-width: 650px;">
+    <div class="content">
+        <img class="card-profile-image" src="/images/pic.png" alt="">
+        <div class="profile-right">
+            <h6 class="profile-head">Soumen Khara</h6>
+            <div class="paragraphs">
+                <table class="student-table">
+                    <tr>
+                        <th>Course:</th>
+                        <td>B.Sc-CMSA(Hons)</td>
+                    </tr>
+                    <tr>
+                        <th>College:</th>
+                        <td>Vivekananda College</td>
+                    </tr>
+                    <tr>
+                        <th>Age:</th>
+                        <td>21</td>
+                    </tr>
+                </table>
+                <table class="student-table">
+                    <tr>
+                        <th>Phone:</th>
+                        <td>89101031xx</td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td>soumen2015.s.k@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <th valign=top>Address:</th>
+                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
+                    </tr>
+                </table>
+            </div>
         </div>
+    </div>
+    <div class="button-container">
+        <a href="#" class="anchor-button">Back</a>
+        <a href="#" class="anchor-button">Edit</a>
     </div>
 </div>
