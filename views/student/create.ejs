@@ -7,29 +7,20 @@
     </div>
     <div class="box">
         <!-- Form -->
-        <form action="">
+        <form action="/create" method="POST">
             <!-- Form headlines -->
             <h6 class="form-branding">Add new student</h6>
 
             <!-- FilePond file input -->
             <div class="form-file-input">
                 <label>Upload Photo</label>
-                <input type="file">
+                <input type="file" name="image">
             </div>
 
-            <!-- Form two input groups -->
-            <div class="form-group">
-                <!-- First name -->
-                <div class="form-input-group">
-                    <label>First name</label>
-                    <input required class="form-input" type="text" id="f-name" name="firstName"
-                        placeholder="First Name">
-                </div>
-                <!-- Last name -->
-                <div class="form-input-group">
-                    <label>Last name</label>
-                    <input required class="form-input" type="text" id="l-name" name="lastName" placeholder="Last Name">
-                </div>
+            <!-- First name -->
+            <div class="form-input-group">
+                <label>Name</label>
+                <input required class="form-input" type="text" id="name" name="name" placeholder="Name">
             </div>
             <!-- College name -->
             <div class="form-input-group">
@@ -68,7 +59,7 @@
             <!-- resindiantal address -->
             <div class="form-input-group">
                 <label>Address</label>
-                <input required type="text" class="form-input" id="number" name="number" placeholder="Address">
+                <input required type="text" class="form-input" id="address" name="address" placeholder="Address">
             </div>
             <!-- form input button -->
             <input class="form-button" type="submit" value="Add">

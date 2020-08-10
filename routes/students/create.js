@@ -3,13 +3,12 @@ const route = express.Router();
 const student = require("../../models/students_scheme");
 const imageTypes = ["image/jpeg", "image/png", "images/gif"];
 const { authorize, isAdmin } = require("../routeChecker");
-
 route.use(authorize);
 route.use(isAdmin);
 // new student post route
 route.post("/", (req, res) => {
   //store the image data to the variable
-  const imageData = req.body.studentImage;
+  const imageData = req.body.image;
   //fined that some one has alredy exist in the databse
   student.findOne(
     {
@@ -40,9 +39,14 @@ route.post("/", (req, res) => {
         // save the valid results
         student({
           name: req.body.name,
+          college: req.body.institute,
+          course: req.body.course,
+          yser: req.body.sem,
           email: req.body.email,
           phone: req.body.phone,
-          degree: req.body.degree,
+          dob: req.body.dob,
+          age: calculate_age(req.body.dob),
+          address: req.body.address,
           image: image,
           imageType: imageType,
         }).save((err, data) => {
@@ -52,7 +56,7 @@ route.post("/", (req, res) => {
             res.redirect("/create");
           }
           if (data) {
-            console.log(data);
+            console.log("succes");
             req.flash("success", "Creation Successful");
             res.redirect("/create");
           }
@@ -67,4 +71,12 @@ route.get("/", (req, res) => {
   res.render("student/create.ejs", { title: "Add Student", user: req.user });
 });
 
+// for calculating the age
+function calculate_age(birth) {
+  var birthDate = new Date(birth);
+  var cur = new Date();
+  var diff = cur - birthDate;
+  var age = Math.floor(diff / 31557600000);
+  return Number(age);
+}
 module.exports = route;
