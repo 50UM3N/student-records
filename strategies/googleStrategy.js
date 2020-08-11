@@ -7,7 +7,7 @@ function googleAuthenticator(passport, user) {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: "http://localhost:8080/auth/google/callback",
+        callbackURL: `${process.env.CALLBACK_URL}/auth/google/callback`,
       },
       (accessToken, refreshToken, profile, done) => {
         user.findOne({ email: profile._json.email }, (err, data) => {
