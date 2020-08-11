@@ -10,7 +10,19 @@
         <form action="/create" method="POST">
             <!-- Form headlines -->
             <h6 class="form-branding">Add new student</h6>
-
+            <% if (locals.messages.msg) { %>
+            <div class="form-alert">
+                <span class="closeBtn" onclick="alertClose(this)">&times;</span>
+                <%=locals.messages.msg%>
+            </div>
+            <% } %>
+            <!-- displaying success messages -->
+            <% if (locals.messages.success) { %>
+            <div class="form-alert alert-success">
+                <span class="closeBtn" onclick="alertClose(this)">&times;</span>
+                <%=locals.messages.success%>
+            </div>
+            <% } %>
             <!-- FilePond file input -->
             <div class="form-file-input">
                 <label>Upload Photo</label>
@@ -51,7 +63,8 @@
             <!-- Phone Number -->
             <div class="form-input-group">
                 <label>Phone</label>
-                <input type="phone" class="form-input" id="number" name="number" placeholder="Phone Number (optional)">
+                <input type="tel" inputmode="tel" class="form-input" id="number" name="number"
+                    placeholder="Phone Number (optional)">
             </div>
             <!-- Date of birth -->
             <div class="form-input-group">

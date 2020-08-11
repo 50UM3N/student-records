@@ -22,7 +22,7 @@ const student = new mongoose.Schema({
     require: true,
   },
   phone: {
-    type: String,
+    type: Number,
     default: null,
   },
   dob: {
