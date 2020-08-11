@@ -18,7 +18,7 @@ const pond = FilePond.create(inputElement, {
   labelIdle:
     'Drag & Drop your Image or <span class="filepond--label-action"> Browse </span>',
   allowImageResize: true,
-  imageResizeTargetWidth: 20,
+  imageResizeTargetWidth: 200,
   imageResizeMode: "cover",
   allowFileSizeValidation: true,
   minFileSize: "10KB",
