@@ -50,9 +50,7 @@ const student = new mongoose.Schema({
 //converting the binary file to proper type image
 student.virtual("studentImage").get(function () {
   if (this.image != null && this.imageType != null) {
-    return `data:${this.imageType};charset=utf-8;base64,${this.image.toString(
-      "base64"
-    )}`;
+    return `data:${this.imageType};base64,${this.image.toString("base64")}`;
   }
 });
 

@@ -11,14 +11,15 @@ FilePond.registerPlugin(
   FilePondPluginFileMetadata,
   FilePondPluginFileValidateSize,
   FilePondPluginFileValidateType,
-  FilePondPluginFileEncode
+  FilePondPluginFileEncode,
+  FilePondPluginFileRename
 );
 const inputElement = document.querySelector('input[type="file"]');
 const pond = FilePond.create(inputElement, {
   labelIdle:
     'Drag & Drop your Image or <span class="filepond--label-action"> Browse </span>',
   allowImageResize: true,
-  imageResizeTargetWidth: 200,
+  imageResizeTargetWidth: 500,
   imageResizeMode: "cover",
   allowFileSizeValidation: true,
   minFileSize: "10KB",
@@ -29,5 +30,17 @@ const pond = FilePond.create(inputElement, {
   labelFileTypeNotAllowed: "File of invalid type",
   fileValidateTypeLabelExpectedTypes: "Expects {allButLastType} or {lastType}",
   stylePanelAspectRatio: "1:1",
+  allowFileRename: true,
+  fileRenameFunction: (file) => {
+    return `image${file.extension}`;
+  },
 });
-// pond.addFile('logo.png');
+const hiddenInput = document.getElementById("hiddenInput");
+if (hiddenInput) {
+  pond
+    .addFile(hiddenInput.value)
+    .then((file) => {})
+    .catch((error) => {
+      console.log(error);
+    });
+}
