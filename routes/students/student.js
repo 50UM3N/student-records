@@ -44,10 +44,6 @@ route.get("/:id", (req, res) => {
       });
     }
   });
-  // res.render("student/student.ejs", {
-  //   title: "ss",
-  //   user: req.user,
-  // });
 });
 
 module.exports = route;

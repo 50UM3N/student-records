@@ -3,41 +3,49 @@
     <div class="content">
         <img class="card-profile-image" src="/images/pic.png" alt="">
         <div class="profile-right">
-            <h6 class="profile-head">Soumen Khara</h6>
+            <h6 class="profile-head"><%= student.name %> </h6>
             <div class="paragraphs">
                 <table class="student-table">
                     <tr>
                         <th>Course:</th>
-                        <td>B.Sc-CMSA(Hons)</td>
+                        <td><%= student.course %> </td>
                     </tr>
                     <tr>
                         <th>College:</th>
-                        <td>Vivekananda College</td>
+                        <td><%= student.college %> </td>
+                    </tr>
+                    <tr>
+                        <th>Sem/Year:</th>
+                        <td><%= student.year %> </td>
                     </tr>
                     <tr>
                         <th>Age:</th>
-                        <td>21</td>
+                        <td><%= student.age %> </td>
                     </tr>
                 </table>
                 <table class="student-table">
                     <tr>
+                        <th>DOB:</th>
+                        <td><%= student.dob.toLocaleDateString() %> </td>
+                    </tr>
+                    <tr>
                         <th>Phone:</th>
-                        <td>89101031xx</td>
+                        <td><a href="tel:<%= student.phone %>"><%= student.phone %></a></td>
                     </tr>
                     <tr>
                         <th>Email:</th>
-                        <td>soumen2015.s.k@gmail.com</td>
+                        <td><a href="mailto:<%= student.email %>"><%= student.email %></a></td>
                     </tr>
                     <tr>
                         <th valign=top>Address:</th>
-                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
+                        <td><%= student.address %> </td>
                     </tr>
                 </table>
             </div>
         </div>
     </div>
     <div class="button-container">
-        <a href="#" class="anchor-button">Back</a>
+        <a href="/student" class="anchor-button">Back</a>
         <a href="#" class="anchor-button">Edit</a>
     </div>
 </div>
