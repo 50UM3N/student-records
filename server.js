@@ -33,7 +33,7 @@ githubAuthenticator(passport, user);
 googleAuthenticator(passport, user);
 //connecting to the mongodb database
 mongoose
-  .connect(process.env.MONGO_LOCAL_URL, {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
