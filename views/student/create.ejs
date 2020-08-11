@@ -14,52 +14,55 @@
             <!-- FilePond file input -->
             <div class="form-file-input">
                 <label>Upload Photo</label>
-                <input type="file" name="image">
+                <input required type="file" name="image">
             </div>
 
-            <!-- First name -->
+            <!-- Name -->
             <div class="form-input-group">
                 <label>Name</label>
-                <input required class="form-input" type="text" id="name" name="name" placeholder="Name">
+                <input required class="form-input" type="text" id="name" name="name" placeholder="Name (required)">
             </div>
             <!-- College name -->
             <div class="form-input-group">
                 <label>College/Institute</label>
                 <input required class="form-input" type="text" id="institute" name="institute"
-                    placeholder="College/Institute">
+                    placeholder="College/Institute (required)">
             </div>
             <!-- Form two input group -->
             <div class="form-group">
                 <!-- Course name -->
                 <div class="form-input-group">
                     <label>Course</label>
-                    <input required class="form-input" type="text" id="course" name="course" placeholder="Course">
+                    <input required class="form-input" type="text" id="course" name="course"
+                        placeholder="Course (required)">
                 </div>
                 <!-- year -->
                 <div class="form-input-group">
                     <label>Semester/Year</label>
-                    <input required class="form-input" type="text" id="sem" name="sem" placeholder="Semester/Year">
+                    <input required class="form-input" type="text" id="sem" name="sem"
+                        placeholder="Semester/Year (required)">
                 </div>
             </div>
             <!-- form single email input -->
             <div class="form-input-group">
                 <label>Email Address</label>
-                <input required class="form-input" type="email" id="email" name="email" placeholder="Email">
+                <input required class="form-input" type="email" id="email" name="email" placeholder="Email (required)">
             </div>
             <!-- Phone Number -->
             <div class="form-input-group">
                 <label>Phone</label>
-                <input required type="phone" class="form-input" id="number" name="number" placeholder="Phone Number">
+                <input type="phone" class="form-input" id="number" name="number" placeholder="Phone Number (optional)">
             </div>
             <!-- Date of birth -->
             <div class="form-input-group">
                 <label>Date of birth</label>
-                <input required type="date" class="form-input" id="dob" name="dob" placeholder="Date of biter">
+                <input required type="date" max="2003-07-05" class="form-input" id="dob" name="dob"
+                    placeholder="Date of biter">
             </div>
             <!-- resindiantal address -->
             <div class="form-input-group">
                 <label>Address</label>
-                <input required type="text" class="form-input" id="address" name="address" placeholder="Address">
+                <input type="text" class="form-input" id="address" name="address" placeholder="Address (optional)">
             </div>
             <!-- form input button -->
             <input class="form-button" type="submit" value="Add">
