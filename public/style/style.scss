@@ -167,3 +167,27 @@ form {
     align-items: center;
   }
 }
+// input group
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.append-button {
+  margin: 0;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  font-size: 13.5px;
+}
+.f99 {
+  margin-bottom: 0;
+  width: 100%;
+  max-width: calc(832px - 100px);
+  .form-input {
+    background-color: white;
+    height: 36px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}

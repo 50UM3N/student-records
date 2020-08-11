@@ -1,48 +1,19 @@
 <%- include('../partials/navbar.ejs') %>
 <div class="container center">
-    <!-- search box -->
-    <!-- <form action="/student" method="GET">
-        <div class="input-group mb-3" style="width: 100%; margin: 0 auto;">
-            <input type="text" class="form-control" placeholder="Search a student" name="name"
-                value="<%= searchedData.name %>">
+    <form action="/student" method="GET">
+        <div class="input-group">
+            <div class="form-input-group f99">
+                <input required value="<%= searchedData.name %>" class="form-input" type="text" id="search" name="name"
+                    placeholder="Search a student">
+            </div>
             <div class="input-group-append">
-                <button href="#" class="btn btn-outline-secondary" type="submit">Search</button>
+                <button class="anchor-button append-button" type="submit">Search</button>
             </div>
         </div>
-    </form> -->
-    <!-- <div class="card">
-        <div class="left">
-            <img class="card-logo" src="/images/pic.png" alt="">
-        </div>
-        <div class="right">
-            <div class="right-top">
-                <div class="content-container">
-                    <h6 class="card-headline">Soumen Khara</h6>
-                    <p class="body2 card-body wrapping">
-                        <b>Course:</b> B.Sc-CMSA(HONS)<br>
-                        <b>Email:</b> soumen2015.s.k@gmail.com<br>
-                        <b>Phone:</b> 89101031XX
-                    </p>
-                </div>
+    </form>
 
-                <p class="overline card-overline">Mouse over the card form more info</p>
-            </div>
-            <div class="right-bottom">
-                <div class="fill-container">
-                    <div class="content-container">
-                        <h6 class="card-headline">Soumen Khara</h6>
-                        <p class="body2 card-body">Lorem </p>
-                    </div>
-                    <div class="button-container">
-                        <a class="anchor-button card-button a-small" href="#"><span>GO TO</span></a>
-                        <a class="anchor-button card-button a-small" href="#"><span>GO TO</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
+</div>
+<div class="container center">
     <div class="row">
         <!-- render the all students details -->
         <% students.forEach(student=>{ %>
@@ -73,8 +44,11 @@
                             <div class="button-container">
                                 <a class="anchor-button card-button a-small"
                                     href="/student/<%=student.id%>"><span>Visit</span></a>
+                                <% if (user.role=='admin') {%>
                                 <a class="anchor-button card-button a-small"
                                     href="/update/<%=student.id%>"><span>Edit</span></a>
+                                <%}  %>
+
                             </div>
                         </div>
                     </div>
