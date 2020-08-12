@@ -1451,7 +1451,7 @@ footer .footer {
   }
 }
 
-@media (max-width: 425px) and (max-height: 725px) {
+@media (max-width: 425px) and (max-height: 820px) {
   footer {
     position: relative;
   }
