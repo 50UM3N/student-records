@@ -156,14 +156,14 @@
             <h5 class="form-name">Login Your Account</h5>
             <!-- displaying error messages -->
             <% if (locals.messages.error) { %>
-            <div class="form-alert">
+            <div class="alert alert-danger">
                 <span class="closeBtn" onclick="alertClose(this)">&times;</span>
                 <%=locals.messages.error%>
             </div>
             <% } %>
             <!-- displaying success messages -->
             <% if (locals.messages.success) { %>
-            <div class="form-alert alert-success">
+            <div class="alert alert-success">
                 <span class="closeBtn" onclick="alertClose(this)">&times;</span>
                 <%=locals.messages.success%>
             </div>

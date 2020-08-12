@@ -89,14 +89,14 @@
             <h5 class="form-name">Create Your Account</h5>
             <!-- displaying warnings -->
             <% if (locals.messages.warning) { %>
-            <div class="form-alert alert-warning">
+            <div class="alert alert-warning">
                 <span class="closeBtn" onclick="alertClose(this)">&times;</span>
                 <%=locals.messages.warning%>
             </div>
             <% } %>
             <!-- displaying error messages -->
             <% if (locals.messages.err) { %>
-            <div class="form-alert">
+            <div class="alert alert-danger">
                 <span class="closeBtn" onclick="alertClose(this)">&times;</span>
                 <%=locals.messages.err%>
             </div>

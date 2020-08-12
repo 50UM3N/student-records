@@ -12,14 +12,14 @@
             <!-- Form headlines -->
             <h6 class="form-branding">Add new student</h6>
             <% if (locals.messages.msg) { %>
-            <div class="form-alert">
+            <div class="alert alert-danger">
                 <span class="closeBtn" onclick="alertClose(this)">&times;</span>
                 <%=locals.messages.msg%>
             </div>
             <% } %>
             <!-- displaying success messages -->
             <% if (locals.messages.success) { %>
-            <div class="form-alert alert-success">
+            <div class="alert alert-success">
                 <span class="closeBtn" onclick="alertClose(this)">&times;</span>
                 <%=locals.messages.success%>
             </div>

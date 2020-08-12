@@ -1,11 +1,5 @@
 :root {
   --font-family: "Roboto", sans-serif;
-  --success-color: #005f26;
-  --success-container-color: #ccf1db;
-  --warning-color: #855800;
-  --warning-container-color: #ffeecc;
-  --alert-color: #81192c;
-  --alert-container-color: #fed6dd;
   --color1: #ffffff;
   --color2: #6c63ff;
   --color3: #2f2e41;
@@ -19,6 +13,14 @@
   --button-color: var(--color2);
   --form-container-shadow: #c3c3ff;
   --label-color: var(--color3);
+  --alert-success-color: #005f26;
+  --alert-success-background-color: #ccf1db;
+  --alert-warning-color: #855800;
+  --alert-warning-background-color: #ffeecc;
+  --alert-info-color: #1e647b;
+  --alert-info-background-color: #d7f2fb;
+  --alert-danger-color: #81192c;
+  --alert-danger-background-color: #fed6dd;
   --background-color: white;
   --background-color2: #f9f9ff;
   --body-text-color: var(--color3);
@@ -647,16 +649,21 @@ body {
   margin-top: 1rem;
 }
 
-.form-alert {
-  --color1: var(--alert-container-color);
-  --color2: var(--alert-color);
+.alert {
+  --color1: #d4d4d4;
+  --color2: #141414;
   padding: 1rem;
   border-radius: 0.25rem;
   background-color: var(--color1);
   color: var(--color2);
+  margin-bottom: 0.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
-.form-alert .closeBtn {
+.alert .closeBtn {
   margin-left: 15px;
   color: var(--color2);
   opacity: 0.8;
@@ -664,24 +671,38 @@ body {
   float: right;
   font-size: 22px;
   line-height: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.form-alert .closeBtn:hover {
+.alert .closeBtn:hover {
   color: #1a1a1a;
   opacity: 1;
 }
 
 .alert-success {
-  --color1: var(--success-container-color);
-  --color2: var(--success-color);
+  --color1: var(--alert-success-background-color);
+  --color2: var(--alert-success-color);
 }
 
 .alert-warning {
-  --color1: var(--warning-container-color);
-  --color2: var(--warning-color);
+  --color1: var(--alert-warning-background-color);
+  --color2: var(--alert-warning-color);
+}
+
+.alert-info {
+  --color1: var(--alert-info-background-color);
+  --color2: var(--alert-info-color);
+}
+
+.alert-danger {
+  --color1: var(--alert-danger-background-color);
+  --color2: var(--alert-danger-color);
 }
 
 .form-container {
