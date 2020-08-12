@@ -39,6 +39,7 @@
   align-items: center;
   border-radius: 0.25rem;
   margin: 0px 8px;
+  cursor: pointer;
   transition: all 0.2s linear;
   &:hover {
     background-color: var(--b-hover);
