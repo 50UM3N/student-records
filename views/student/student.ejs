@@ -1,51 +1,53 @@
 <%- include('../partials/navbar.ejs') %>
-<div class="box" style="max-width: 650px;">
-    <div class="content">
-        <img class="card-profile-image" src="<%= student.studentImage %> " alt="">
-        <div class="profile-right">
-            <h6 class="profile-head"><%= student.name %> </h6>
-            <div class="paragraphs">
-                <table class="student-table">
-                    <tr>
-                        <th>Course:</th>
-                        <td><%= student.course %> </td>
-                    </tr>
-                    <tr>
-                        <th>College:</th>
-                        <td><%= student.college %> </td>
-                    </tr>
-                    <tr>
-                        <th>Sem/Year:</th>
-                        <td><%= student.year %> </td>
-                    </tr>
-                    <tr>
-                        <th>Age:</th>
-                        <td><%= student.age %> </td>
-                    </tr>
-                </table>
-                <table class="student-table">
-                    <tr>
-                        <th>DOB:</th>
-                        <td><%= student.dob.toLocaleDateString() %> </td>
-                    </tr>
-                    <tr>
-                        <th>Phone:</th>
-                        <td><a href="tel:<%= student.phone %>"><%= student.phone %></a></td>
-                    </tr>
-                    <tr>
-                        <th>Email:</th>
-                        <td><a href="mailto:<%= student.email %>"><%= student.email %></a></td>
-                    </tr>
-                    <tr>
-                        <th valign=top>Address:</th>
-                        <td><%= student.address %> </td>
-                    </tr>
-                </table>
+<div class="container">
+    <div class="box" style="max-width: 650px;">
+        <div class="content">
+            <img class="card-profile-image" src="<%= student.studentImage %> " alt="">
+            <div class="profile-right">
+                <h6 class="profile-head"><%= student.name %> </h6>
+                <div class="paragraphs">
+                    <table class="student-table">
+                        <tr>
+                            <th>Course:</th>
+                            <td><%= student.course %> </td>
+                        </tr>
+                        <tr>
+                            <th>College:</th>
+                            <td><%= student.college %> </td>
+                        </tr>
+                        <tr>
+                            <th>Sem/Year:</th>
+                            <td><%= student.year %> </td>
+                        </tr>
+                        <tr>
+                            <th>Age:</th>
+                            <td><%= student.age %> </td>
+                        </tr>
+                    </table>
+                    <table class="student-table">
+                        <tr>
+                            <th>DOB:</th>
+                            <td><%= student.dob.toLocaleDateString() %> </td>
+                        </tr>
+                        <tr>
+                            <th>Phone:</th>
+                            <td><a href="tel:<%= student.phone %>"><%= student.phone %></a></td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td><a href="mailto:<%= student.email %>"><%= student.email %></a></td>
+                        </tr>
+                        <tr>
+                            <th valign=top>Address:</th>
+                            <td><%= student.address %> </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="button-container">
-        <a href="/student" class="anchor-button">Back</a>
-        <a href="#" class="anchor-button">Edit</a>
+        <div class="button-container">
+            <a href="/student" class="anchor-button">Back</a>
+            <a href="#" class="anchor-button">Edit</a>
+        </div>
     </div>
 </div>

@@ -12,7 +12,8 @@ FilePond.registerPlugin(
   FilePondPluginFileValidateSize,
   FilePondPluginFileValidateType,
   FilePondPluginFileEncode,
-  FilePondPluginFileRename
+  FilePondPluginFileRename,
+  FilePondPluginImageCrop
 );
 const inputElement = document.querySelector('input[type="file"]');
 const pond = FilePond.create(inputElement, {
@@ -34,6 +35,8 @@ const pond = FilePond.create(inputElement, {
   fileRenameFunction: (file) => {
     return `image${file.extension}`;
   },
+  allowImageCrop: true,
+  imageCropAspectRatio: "1:1",
 });
 const hiddenInput = document.getElementById("hiddenInput");
 if (hiddenInput) {
