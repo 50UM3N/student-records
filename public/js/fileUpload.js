@@ -1,8 +1,3 @@
-console.log("Uploader Update");
-
-function alertClose(e) {
-  e.parentElement.style.display = "none";
-}
 // Register the plugin
 FilePond.registerPlugin(
   FilePondPluginImagePreview,
