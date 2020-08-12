@@ -16,31 +16,29 @@
   pointer-events: all;
 }
 .sub-menu-dropdown {
-  --border-color: #d3d3d3;
-  --box-shadow-color: lightgray;
   position: absolute;
   z-index: 100;
   width: 280px;
   opacity: 0;
   pointer-events: none;
-  background-color: var(--background-color);
+  background-color: var(--dropdown-menu-color);
   border-radius: 0.25rem;
   top: 65px;
   transform: scale(0.97);
   transition: all 0.2s ease-out;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 0 10px var(--box-shadow-color);
+  border: 1px solid var(--dropdown-menu-border-color);
+  box-shadow: 0 0 5px var(--dropdown-menu-shadow-color);
   &::before {
     position: absolute;
     top: -11px;
     content: "";
     width: 20px;
     height: 20px;
-    background-color: var(--background-color);
+    background-color: var(--dropdown-menu-color);
     border-top-left-radius: 0.25rem;
     transform: rotate(45deg);
-    border-left: 1px solid var(--border-color);
-    border-top: 1px solid var(--border-color);
+    border-left: 1px solid var(--dropdown-menu-border-color);
+    border-top: 1px solid var(--dropdown-menu-border-color);
     z-index: -1;
   }
 }
@@ -58,7 +56,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: var(--accent-color);
+    color: var(--dropdown-menu-text-color);
     div {
       flex: 1;
       margin-left: 0.5rem;
@@ -66,14 +64,14 @@
       font-weight: 400;
     }
     .nav-link-icon {
-      fill: var(--accent-color);
+      fill: var(--dropdown-menu-text-color);
       height: 17px;
     }
   }
 
   &:hover {
     border-radius: 0.25rem;
-    background-color: var(--shadow-color);
+    background-color: var(--dropdown-menu-item-hover-color);
   }
 }
 
@@ -86,11 +84,11 @@
   height: 55px;
   width: 100%;
   z-index: 100;
-  background-color: var(--background-color);
-  border-bottom: 3px solid var(--accent-color);
+  background-color: var(--navbar-background-color);
+  border-bottom: 3px solid var(--navbar-border-color);
   .nav-brand {
     text-decoration: none;
-    color: var(--accent-color);
+    color: var(--navbar-text-color);
     font-weight: 500;
     font-size: 1.5rem;
   }
@@ -168,11 +166,11 @@
             margin-bottom: 0.5rem;
           }
           h6 {
-            color: var(--main-color);
+            color: var(--dropdown-menu-headline-color);
             margin-bottom: 0.5rem;
           }
           p {
-            color: #9a9da0;
+            color: var(--dropdown-menu-sub-headline-color);
             font-size: 12px;
           }
         }
@@ -185,15 +183,15 @@
           .item {
             margin: 0rem 0.5rem;
             .profile-link-icon {
-              border: 1px solid var(--border-color);
+              border: 1px solid var(--dropdown-menu-text-color);
               border-radius: 50%;
               padding: 5px;
-              fill: var(--accent-color);
+              fill: var(--dropdown-menu-text-color);
               height: 30px;
               width: 30px;
               transition: all 0.2s linear;
               &:hover {
-                background-color: #c9c9c948;
+                background-color: var(--dropdown-menu-item-hover-color);
               }
             }
           }

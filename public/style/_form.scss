@@ -47,7 +47,7 @@
       align-items: center;
       width: 100%;
       height: 38px;
-      background-color: var(--accent-color);
+      background-color: var(--color2);
       border-radius: 0.25rem;
       text-align: center;
       line-height: 250%;
@@ -64,7 +64,7 @@
       .oauth-button {
         background-color: var(--button-hover-color);
       }
-      box-shadow: 0 0 10px var(--button-hover-shadow);
+      box-shadow: 0 0 10px var(--button-hover-shadow-color);
     }
   }
 }
@@ -125,7 +125,7 @@
   background-color: var(--background-color);
   position: relative;
   border-radius: 1rem;
-  box-shadow: 0 0 10px var(--input-box-shadow);
+  box-shadow: 0 0 10px var(--form-container-shadow);
   .left {
     order: 2;
     position: relative;
@@ -154,15 +154,15 @@
     font-weight: 400;
     padding: 6px 12px;
     outline: none;
-    border: 1px solid #d5d9dd;
+    border: 1px solid var(--input-box-border-color);
     border-radius: 0.25rem;
     transition: all 0.2s linear;
-    background-color: #fafafa;
+    background-color: var(--input-box-background-color);
     &:focus {
-      border-color: #564fcc;
+      border-color: var(--input-box-active-border-color);
       outline: none;
-      box-shadow: 0 0 0 3px #554fcc5d;
-      background-color: #ffffff;
+      box-shadow: 0 0 0 3px var(--input-box-active-shadow-color);
+      background-color: var(--input-box-active-background-color);
     }
   }
 }
@@ -189,11 +189,10 @@ form {
   padding: 1.5rem;
   .form-branding {
     margin-bottom: 0.5rem;
-    color: var(--accent-color);
   }
   .form-name {
     margin-bottom: 1rem;
-    color: var(--main-color);
+    color: var(--label-color);
   }
   .form-text-group {
     display: flex;

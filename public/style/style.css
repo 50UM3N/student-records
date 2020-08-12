@@ -1,19 +1,43 @@
 :root {
   --font-family: "Roboto", sans-serif;
-  --background-color: white;
-  --background-color2: #f9f9ff;
-  --main-color: #2f2e41;
-  --accent-color: #6c63ff;
-  --shadow-color: #f3f2ff;
-  --button-hover-color: #534aff;
-  --button-hover-shadow: #7972f8;
-  --input-box-shadow: #c3c3ff;
   --success-color: #005f26;
   --success-container-color: #ccf1db;
   --warning-color: #855800;
   --warning-container-color: #ffeecc;
   --alert-color: #81192c;
   --alert-container-color: #fed6dd;
+  --color1: #ffffff;
+  --color2: #6c63ff;
+  --color3: #2f2e41;
+  --color4: #f3f2ff;
+  --color5: #e1e4e8;
+  --card-main-color: #6c63ff;
+  --card-shadow-color: #c3c3ff;
+  --button-hover-color: #534aff;
+  --button-hover-shadow-color: #7972f8;
+  --button-text-color: white;
+  --button-color: var(--color2);
+  --form-container-shadow: #c3c3ff;
+  --label-color: var(--color3);
+  --background-color: white;
+  --background-color2: #f9f9ff;
+  --body-text-color: var(--color3);
+  --body-headline-color: var(--color2);
+  --input-box-background-color: #fafafa;
+  --input-box-border-color: var(--color5);
+  --input-box-active-background-color: white;
+  --input-box-active-border-color: var(--color2);
+  --input-box-active-shadow-color: #453ec946;
+  --navbar-background-color: var(--color1);
+  --navbar-border-color: var(--color2);
+  --navbar-text-color: var(--color2);
+  --dropdown-menu-color: var(--color1);
+  --dropdown-menu-text-color: var(--color2);
+  --dropdown-menu-sub-headline-color: var(--color2);
+  --dropdown-menu-headline-color: var(--color3);
+  --dropdown-menu-item-hover-color: var(--color4);
+  --dropdown-menu-border-color: var(--color5);
+  --dropdown-menu-shadow-color: var(--color2);
 }
 
 h1 {
@@ -21,7 +45,7 @@ h1 {
   font-size: 96px;
   letter-spacing: -1.5px;
   font-weight: 300;
-  color: var(--accent-color);
+  color: var(--body-headline-color);
 }
 
 h2 {
@@ -29,7 +53,7 @@ h2 {
   font-size: 60px;
   letter-spacing: -0.5;
   font-weight: 300;
-  color: var(--accent-color);
+  color: var(--body-headline-color);
 }
 
 h3 {
@@ -37,7 +61,7 @@ h3 {
   font-size: 48px;
   letter-spacing: 0px;
   font-weight: 400;
-  color: var(--accent-color);
+  color: var(--body-headline-color);
 }
 
 h4 {
@@ -45,7 +69,7 @@ h4 {
   font-size: 34px;
   letter-spacing: 2.5px;
   font-weight: 400;
-  color: var(--accent-color);
+  color: var(--body-headline-color);
 }
 
 h5 {
@@ -53,7 +77,7 @@ h5 {
   font-size: 24px;
   letter-spacing: 0px;
   font-weight: 400;
-  color: var(--accent-color);
+  color: var(--body-headline-color);
 }
 
 h6 {
@@ -61,7 +85,7 @@ h6 {
   font-size: 20px;
   letter-spacing: 0.15px;
   font-weight: 500;
-  color: var(--accent-color);
+  color: var(--body-headline-color);
 }
 
 p.body1 {
@@ -124,6 +148,7 @@ p.caption {
 
 body {
   background-color: var(--background-color2);
+  color: var(--body-text-color);
 }
 
 .container {
@@ -143,8 +168,8 @@ body {
   height: 38px;
   padding: 6px 12px;
   outline: none;
-  background-color: var(--accent-color);
-  color: var(--background-color);
+  background-color: var(--button-color);
+  color: var(--button-text-color);
   border: none;
   border-radius: 0.25rem;
   font-size: 14px;
@@ -156,13 +181,13 @@ body {
 
 .form-button:hover {
   background-color: var(--button-hover-color);
-  -webkit-box-shadow: 0 0 10px var(--button-hover-shadow);
-          box-shadow: 0 0 10px var(--button-hover-shadow);
+  -webkit-box-shadow: 0 0 10px var(--button-hover-shadow-color);
+          box-shadow: 0 0 10px var(--button-hover-shadow-color);
 }
 
 .anchor-button {
-  --b-color: var(--accent-color);
-  --b-shadow: var(--button-hover-shadow);
+  --b-color: var(--button-color);
+  --b-shadow: var(--button-hover-shadow-color);
   --b-hover: var(--button-hover-color);
   --b-height: 36px;
   --b-padding: 6px 12px;
@@ -211,7 +236,7 @@ body {
 }
 
 .card-button {
-  --b-color: var(--main-color);
+  --b-color: var(--color3);
   --b-shadow: #3e3d55;
   --b-hover: #202030;
 }
@@ -244,23 +269,21 @@ body {
 }
 
 .sub-menu-dropdown {
-  --border-color: #d3d3d3;
-  --box-shadow-color: lightgray;
   position: absolute;
   z-index: 100;
   width: 280px;
   opacity: 0;
   pointer-events: none;
-  background-color: var(--background-color);
+  background-color: var(--dropdown-menu-color);
   border-radius: 0.25rem;
   top: 65px;
   -webkit-transform: scale(0.97);
           transform: scale(0.97);
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-  border: 1px solid var(--border-color);
-  -webkit-box-shadow: 0 0 10px var(--box-shadow-color);
-          box-shadow: 0 0 10px var(--box-shadow-color);
+  border: 1px solid var(--dropdown-menu-border-color);
+  -webkit-box-shadow: 0 0 5px var(--dropdown-menu-shadow-color);
+          box-shadow: 0 0 5px var(--dropdown-menu-shadow-color);
 }
 
 .sub-menu-dropdown::before {
@@ -269,12 +292,12 @@ body {
   content: "";
   width: 20px;
   height: 20px;
-  background-color: var(--background-color);
+  background-color: var(--dropdown-menu-color);
   border-top-left-radius: 0.25rem;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  border-left: 1px solid var(--border-color);
-  border-top: 1px solid var(--border-color);
+  border-left: 1px solid var(--dropdown-menu-border-color);
+  border-top: 1px solid var(--dropdown-menu-border-color);
   z-index: -1;
 }
 
@@ -298,7 +321,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  color: var(--accent-color);
+  color: var(--dropdown-menu-text-color);
 }
 
 .nav-item .nav-link div {
@@ -310,13 +333,13 @@ body {
 }
 
 .nav-item .nav-link .nav-link-icon {
-  fill: var(--accent-color);
+  fill: var(--dropdown-menu-text-color);
   height: 17px;
 }
 
 .nav-item:hover {
   border-radius: 0.25rem;
-  background-color: var(--shadow-color);
+  background-color: var(--dropdown-menu-item-hover-color);
 }
 
 .navbar {
@@ -334,13 +357,13 @@ body {
   height: 55px;
   width: 100%;
   z-index: 100;
-  background-color: var(--background-color);
-  border-bottom: 3px solid var(--accent-color);
+  background-color: var(--navbar-background-color);
+  border-bottom: 3px solid var(--navbar-border-color);
 }
 
 .navbar .nav-brand {
   text-decoration: none;
-  color: var(--accent-color);
+  color: var(--navbar-text-color);
   font-weight: 500;
   font-size: 1.5rem;
 }
@@ -460,12 +483,12 @@ body {
 }
 
 .navbar .item-container .profile-menu .profile-sub-menu .image-container h6 {
-  color: var(--main-color);
+  color: var(--dropdown-menu-headline-color);
   margin-bottom: 0.5rem;
 }
 
 .navbar .item-container .profile-menu .profile-sub-menu .image-container p {
-  color: #9a9da0;
+  color: var(--dropdown-menu-sub-headline-color);
   font-size: 12px;
 }
 
@@ -487,10 +510,10 @@ body {
 }
 
 .navbar .item-container .profile-menu .profile-sub-menu .profile-items .item .profile-link-icon {
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--dropdown-menu-text-color);
   border-radius: 50%;
   padding: 5px;
-  fill: var(--accent-color);
+  fill: var(--dropdown-menu-text-color);
   height: 30px;
   width: 30px;
   -webkit-transition: all 0.2s linear;
@@ -498,7 +521,7 @@ body {
 }
 
 .navbar .item-container .profile-menu .profile-sub-menu .profile-items .item .profile-link-icon:hover {
-  background-color: #c9c9c948;
+  background-color: var(--dropdown-menu-item-hover-color);
 }
 
 .navbar .item-container .profile-menu .profile-sub-menu .profile-list-menu {
@@ -526,7 +549,7 @@ body {
 
 .b111 .b113 {
   position: absolute;
-  top: calc(50% - 8px);
+  top: calc(50% - 10px);
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -584,7 +607,7 @@ body {
           align-items: center;
   width: 100%;
   height: 38px;
-  background-color: var(--accent-color);
+  background-color: var(--color2);
   border-radius: 0.25rem;
   text-align: center;
   line-height: 250%;
@@ -601,8 +624,8 @@ body {
 }
 
 .form-oauth .oauth-anchor:hover {
-  -webkit-box-shadow: 0 0 10px var(--button-hover-shadow);
-          box-shadow: 0 0 10px var(--button-hover-shadow);
+  -webkit-box-shadow: 0 0 10px var(--button-hover-shadow-color);
+          box-shadow: 0 0 10px var(--button-hover-shadow-color);
 }
 
 .form-oauth .oauth-anchor:hover .oauth-button {
@@ -682,8 +705,8 @@ body {
   background-color: var(--background-color);
   position: relative;
   border-radius: 1rem;
-  -webkit-box-shadow: 0 0 10px var(--input-box-shadow);
-          box-shadow: 0 0 10px var(--input-box-shadow);
+  -webkit-box-shadow: 0 0 10px var(--form-container-shadow);
+          box-shadow: 0 0 10px var(--form-container-shadow);
 }
 
 .form-container .left {
@@ -726,19 +749,19 @@ body {
   font-weight: 400;
   padding: 6px 12px;
   outline: none;
-  border: 1px solid #d5d9dd;
+  border: 1px solid var(--input-box-border-color);
   border-radius: 0.25rem;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  background-color: #fafafa;
+  background-color: var(--input-box-background-color);
 }
 
 .form-input-group .form-input:focus {
-  border-color: #564fcc;
+  border-color: var(--input-box-active-border-color);
   outline: none;
-  -webkit-box-shadow: 0 0 0 3px #554fcc5d;
-          box-shadow: 0 0 0 3px #554fcc5d;
-  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 0 3px var(--input-box-active-shadow-color);
+          box-shadow: 0 0 0 3px var(--input-box-active-shadow-color);
+  background-color: var(--input-box-active-background-color);
 }
 
 .form-group {
@@ -775,12 +798,11 @@ form {
 
 form .form-branding {
   margin-bottom: 0.5rem;
-  color: var(--accent-color);
 }
 
 form .form-name {
   margin-bottom: 1rem;
-  color: var(--main-color);
+  color: var(--label-color);
 }
 
 form .form-text-group {
@@ -851,7 +873,6 @@ form .form-text-group a:hover {
   --card-height: 170px;
   --card-width: 400px;
   --left-cont-width: 135px;
-  --right-container-color: var(--accent-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -859,8 +880,8 @@ form .form-text-group a:hover {
   width: var(--card-width);
   overflow: hidden;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 10px #c3c3ff;
-          box-shadow: 0 0 10px #c3c3ff;
+  -webkit-box-shadow: 0 0 10px var(--card-shadow-color);
+          box-shadow: 0 0 10px var(--card-shadow-color);
 }
 
 .card .card-overline {
@@ -899,7 +920,7 @@ form .form-text-group a:hover {
   padding: 1rem;
   height: var(--card-height);
   width: var(--left-cont-width);
-  background-color: var(--right-container-color);
+  background-color: var(--card-main-color);
   z-index: 2;
 }
 
@@ -943,7 +964,7 @@ form .form-text-group a:hover {
   top: 0;
   height: var(--card-height);
   width: 0px;
-  background-color: var(--right-container-color);
+  background-color: var(--card-main-color);
   overflow: hidden;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
@@ -1012,7 +1033,6 @@ form .form-text-group a:hover {
   border-radius: 0.375rem;
   padding: 1rem;
   background-color: var(--background-color);
-  color: var(--main-color);
 }
 
 .box .box {
@@ -1038,7 +1058,7 @@ form .form-text-group a:hover {
   width: 30px;
   height: 30px;
   margin-right: 0.5rem;
-  fill: var(--accent-color);
+  fill: var(--color2);
 }
 
 .box .box-icon-headline .h111 {
@@ -1050,7 +1070,7 @@ form .form-text-group a:hover {
 }
 
 .headline-border .box-heading {
-  border-bottom: 1px solid #e1e4e8;
+  border-bottom: 1px solid var(--color5);
 }
 
 form {

@@ -1,17 +1,50 @@
 :root {
   --font-family: "Roboto", sans-serif;
-  --background-color: white;
-  --background-color2: #f9f9ff;
-  --main-color: #2f2e41;
-  --accent-color: #6c63ff;
-  --shadow-color: #f3f2ff; //list items shadow color
-  --button-hover-color: #534aff;
-  --button-hover-shadow: #7972f8;
-  --input-box-shadow: #c3c3ff;
+  // --input-box-shadow: #c3c3ff;
   --success-color: #005f26;
   --success-container-color: #ccf1db;
   --warning-color: #855800;
   --warning-container-color: #ffeecc;
   --alert-color: #81192c;
   --alert-container-color: #fed6dd;
+  --color1: #ffffff;
+  --color2: #6c63ff;
+  --color3: #2f2e41;
+  --color4: #f3f2ff;
+  --color5: #e1e4e8;
+  // card
+  --card-main-color: #6c63ff;
+  --card-shadow-color: #c3c3ff;
+
+  // button
+  --button-hover-color: #534aff;
+  --button-hover-shadow-color: #7972f8;
+  --button-text-color: white;
+  --button-color: var(--color2);
+  // form
+  --form-container-shadow: #c3c3ff;
+  --label-color: var(--color3);
+  // aff over the page
+  --background-color: white;
+  --background-color2: #f9f9ff;
+  --body-text-color: var(--color3);
+  --body-headline-color: var(--color2);
+  // input box
+  --input-box-background-color: #fafafa;
+  --input-box-border-color: var(--color5);
+  --input-box-active-background-color: white;
+  --input-box-active-border-color: var(--color2);
+  --input-box-active-shadow-color: #453ec946;
+  // navbar
+  --navbar-background-color: var(--color1);
+  --navbar-border-color: var(--color2);
+  --navbar-text-color: var(--color2);
+  // dropdown menu
+  --dropdown-menu-color: var(--color1);
+  --dropdown-menu-text-color: var(--color2);
+  --dropdown-menu-sub-headline-color: var(--color2);
+  --dropdown-menu-headline-color: var(--color3);
+  --dropdown-menu-item-hover-color: var(--color4);
+  --dropdown-menu-border-color: var(--color5);
+  --dropdown-menu-shadow-color: var(--color2);
 }

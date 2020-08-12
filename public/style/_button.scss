@@ -3,8 +3,8 @@
   height: 38px;
   padding: 6px 12px;
   outline: none;
-  background-color: var(--accent-color);
-  color: var(--background-color);
+  background-color: var(--button-color);
+  color: var(--button-text-color);
   border: none;
   border-radius: 0.25rem;
   font-size: 14px;
@@ -13,13 +13,13 @@
   cursor: pointer;
   &:hover {
     background-color: var(--button-hover-color);
-    box-shadow: 0 0 10px var(--button-hover-shadow);
+    box-shadow: 0 0 10px var(--button-hover-shadow-color);
   }
 }
 // Anchor button defaults
 .anchor-button {
-  --b-color: var(--accent-color);
-  --b-shadow: var(--button-hover-shadow);
+  --b-color: var(--button-color);
+  --b-shadow: var(--button-hover-shadow-color);
   --b-hover: var(--button-hover-color);
   --b-height: 36px;
   --b-padding: 6px 12px;
@@ -59,7 +59,7 @@
 }
 // anchor button for card
 .card-button {
-  --b-color: var(--main-color);
+  --b-color: var(--color3);
   --b-shadow: #3e3d55;
   --b-hover: #202030;
 }

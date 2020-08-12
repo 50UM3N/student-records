@@ -2,13 +2,13 @@
   --card-height: 170px;
   --card-width: 400px;
   --left-cont-width: 135px;
-  --right-container-color: var(--accent-color);
+  // --card-main-color: var(--card-main-color);
   display: flex;
   width: 100%;
   width: var(--card-width);
   overflow: hidden;
   border-radius: 5px;
-  box-shadow: 0 0 10px #c3c3ff;
+  box-shadow: 0 0 10px var(--card-shadow-color);
   // card headline
   .card-overline {
     text-align: right;
@@ -39,7 +39,7 @@
     padding: 1rem;
     height: var(--card-height);
     width: var(--left-cont-width);
-    background-color: var(--right-container-color);
+    background-color: var(--card-main-color);
     z-index: 2;
   }
   .wrapping {
@@ -71,7 +71,7 @@
       top: 0;
       height: var(--card-height);
       width: 0px;
-      background-color: var(--right-container-color);
+      background-color: var(--card-main-color);
       overflow: hidden;
       transition: all 0.3s linear;
       .card-headline,

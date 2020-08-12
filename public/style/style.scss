@@ -8,6 +8,7 @@
 }
 body {
   background-color: var(--background-color2);
+  color: var(--body-text-color);
 }
 .container {
   width: 100%;
@@ -34,7 +35,6 @@ body {
   border-radius: 0.375rem;
   padding: 1rem;
   background-color: var(--background-color);
-  color: var(--main-color);
   .box {
     margin: 0;
   }
@@ -50,7 +50,7 @@ body {
       width: 30px;
       height: 30px;
       margin-right: 0.5rem;
-      fill: var(--accent-color);
+      fill: var(--color2);
     }
     .h111 {
       line-height: 1rem;
@@ -60,7 +60,7 @@ body {
 .headline-border {
   padding-top: 0;
   .box-heading {
-    border-bottom: 1px solid #e1e4e8;
+    border-bottom: 1px solid var(--color5);
   }
 }
 form {
