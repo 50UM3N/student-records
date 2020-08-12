@@ -86,7 +86,8 @@ form {
 // student individual view
 .content {
   display: flex;
-  flex-wrap: wrap;
+
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
@@ -96,12 +97,16 @@ form {
     border-radius: 0.5rem;
     margin-bottom: 1rem;
   }
+  .profile-right {
+    width: 100%;
+  }
   .profile-head {
     margin-bottom: 0.5rem;
   }
   .paragraphs {
     display: flex;
     flex-wrap: wrap;
+    flex: 1;
   }
   .student-table {
     border-collapse: collapse;
@@ -126,14 +131,16 @@ form {
   justify-content: flex-end;
 }
 @media (max-width: 400px) {
-  table {
-    font-size: 14px;
-  }
-
-  th {
-    width: 65px;
+  .content {
+    .student-table {
+      font-size: 14px;
+      th {
+        width: 75px;
+      }
+    }
   }
 }
+
 @media (max-width: 425px) {
   .container {
     padding: 0rem 0.5rem;

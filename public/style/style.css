@@ -1126,8 +1126,10 @@ form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1144,6 +1146,10 @@ form {
   margin-bottom: 1rem;
 }
 
+.content .profile-right {
+  width: 100%;
+}
+
 .content .profile-head {
   margin-bottom: 0.5rem;
 }
@@ -1154,6 +1160,9 @@ form {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .content .student-table {
@@ -1189,11 +1198,11 @@ form {
 }
 
 @media (max-width: 400px) {
-  table {
+  .content .student-table {
     font-size: 14px;
   }
-  th {
-    width: 65px;
+  .content .student-table th {
+    width: 75px;
   }
 }
 
