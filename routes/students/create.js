@@ -57,7 +57,11 @@ route.post("/", imageToBase64, (req, res) => {
 
 // adding new student form
 route.get("/", (req, res) => {
-  res.render("student/create.ejs", { title: "Add Student", user: req.user });
+  res.render("student/create.ejs", {
+    title: "Add Student",
+    user: req.user,
+    student: {},
+  });
 });
 
 module.exports = route;

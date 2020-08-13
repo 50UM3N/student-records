@@ -10,77 +10,14 @@
         <!-- Form -->
         <form action="/update/<%= student.id %>" method="POST">
             <!-- Form headlines -->
-            <h6 class="form-branding">Add new student</h6>
+            <h6 class="form-branding">Update Student</h6>
             <% if (locals.messages.msg) { %>
             <div class="alert alert-danger">
                 <span class="closeBtn" onclick="alertClose(this)">&times;</span>
                 <%=locals.messages.msg%>
             </div>
             <% } %>
-            <!-- displaying success messages -->
-            <% if (locals.messages.success) { %>
-            <div class="alert alert-success">
-                <span class="closeBtn" onclick="alertClose(this)">&times;</span>
-                <%=locals.messages.success%>
-            </div>
-            <% } %>
-            <!-- FilePond file input -->
-            <div class="form-file-input">
-                <label>Upload Photo</label>
-                <input required type="file" name="image">
-            </div>
-
-            <!-- Name -->
-            <div class="form-input-group">
-                <label>Name</label>
-                <input required class="form-input" type="text" id="name" name="name" placeholder="Name (required)"
-                    value="<%= student.name %> ">
-            </div>
-            <!-- College name -->
-            <div class="form-input-group">
-                <label>College/Institute</label>
-                <input required class="form-input" type="text" id="institute" name="institute"
-                    placeholder="College/Institute (required)" value="<%= student.college %> ">
-            </div>
-            <!-- Form two input group -->
-            <div class="form-group">
-                <!-- Course name -->
-                <div class="form-input-group">
-                    <label>Course</label>
-                    <input required class="form-input" type="text" id="course" name="course"
-                        placeholder="Course (required)" value="<%= student.course %> ">
-                </div>
-                <!-- year -->
-                <div class="form-input-group">
-                    <label>Semester/Year</label>
-                    <input required class="form-input" type="text" id="sem" name="sem"
-                        placeholder="Semester/Year (required)" value="<%= student.year %> ">
-                </div>
-            </div>
-            <!-- form single email input -->
-            <div class="form-input-group">
-                <label>Email Address</label>
-                <input required class="form-input" type="email" id="email" name="email" placeholder="Email (required)"
-                    value="<%= student.email %> ">
-            </div>
-            <!-- Phone Number -->
-            <div class="form-input-group">
-                <label>Phone</label>
-                <input type="tel" inputmode="tel" class="form-input" id="number" name="number"
-                    placeholder="Phone Number (optional)" value="<%= student.phone %> ">
-            </div>
-            <!-- Date of birth -->
-            <div class="form-input-group">
-                <label>Date of birth</label>
-                <input required type="date" max="2003-07-05" class="form-input" id="dob" name="dob"
-                    placeholder="Date of biter" value="<%= student.dob.toISOString().substring(0,10) %>">
-            </div>
-            <!-- resindiantal address -->
-            <div class="form-input-group">
-                <label>Address</label>
-                <input type="text" class="form-input" id="address" name="address" placeholder="Address (optional)"
-                    value="<%= student.address %> ">
-            </div>
+            <%- include('_form_fields') %>
             <!-- form input button -->
             <input class="form-button" type="submit" value="Update">
             <!-- form text group -->
@@ -91,29 +28,4 @@
         <!-- Form -->
     </div>
 </div>
-
-
-<!-- file preview -->
-<script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-<!-- file transform -->
-<script defer src="https://unpkg.com/filepond-plugin-image-transform/dist/filepond-plugin-image-transform.js"></script>
-<!-- file resized -->
-<script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
-<!-- file metadata -->
-<script defer src="https://unpkg.com/filepond-plugin-file-metadata/dist/filepond-plugin-file-metadata.js"></script>
-<!-- File size validator -->
-<script defer
-    src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
-<!-- file type validation -->
-<script defer
-    src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
-<!-- file encoded -->
-<script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
-<!-- file rename -->
-<script defer src="https://unpkg.com/filepond-plugin-file-rename/dist/filepond-plugin-file-rename.js"></script>
-<!-- image crop -->
-<script defer src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
-<!-- FilePond Script -->
-<script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
-<!-- turn all file input elements into fileponds elements-->
-<script defer src="../js/fileUpload.js"></script>
+<%- include('../partials/scripts') %>

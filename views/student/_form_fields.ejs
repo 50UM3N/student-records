@@ -1,0 +1,62 @@
+<!-- FilePond file input -->
+<div class="form-file-input">
+    <label>Upload Photo</label>
+    <input required type="file" name="image">
+</div>
+
+<!-- Name -->
+<div class="form-input-group">
+    <label>Name</label>
+    <input required class="form-input" type="text" id="name" name="name" placeholder="Name (required)"
+        value="<%= student.name %>">
+</div>
+<!-- College name -->
+<div class="form-input-group">
+    <label>College/Institute</label>
+    <input required class="form-input" type="text" id="institute" name="institute"
+        placeholder="College/Institute (required)" value="<%= student.college %>">
+</div>
+<!-- Form two input group -->
+<div class="form-group">
+    <!-- Course name -->
+    <div class="form-input-group">
+        <label>Course</label>
+        <input required class="form-input" type="text" id="course" name="course" placeholder="Course (required)"
+            value="<%= student.course %>">
+    </div>
+    <!-- year -->
+    <div class="form-input-group">
+        <label>Semester/Year</label>
+        <input required class="form-input" type="text" id="sem" name="sem" placeholder="Semester/Year (required)"
+            value="<%= student.year %>">
+    </div>
+</div>
+<!-- form single email input -->
+<div class="form-input-group">
+    <label>Email Address</label>
+    <input required class="form-input" type="email" id="email" name="email" placeholder="Email (required)"
+        value="<%= student.email %>">
+</div>
+<!-- Phone Number -->
+<div class="form-input-group">
+    <label>Phone</label>
+    <input type="tel" inputmode="tel" class="form-input" id="number" name="number" placeholder="Phone Number (optional)"
+        value="<%= student.phone %>">
+</div>
+<!-- Date of birth -->
+<div class="form-input-group">
+    <label>Date of birth</label>
+    <% if (student.dob) { %>
+    <input required type="date" max="2003-07-05" class="form-input" id="dob" name="dob" placeholder="Date of biter"
+        value="<%= student.dob.toISOString().substring(0,10) %>">
+    <% } else { %>
+    <input required type="date" max="2003-07-05" class="form-input" id="dob" name="dob" placeholder="Date of biter">
+    <% } %>
+
+</div>
+<!-- resindiantal address -->
+<div class="form-input-group">
+    <label>Address</label>
+    <input type="text" class="form-input" id="address" name="address" placeholder="Address (optional)"
+        value="<%= student.address %>">
+</div>
