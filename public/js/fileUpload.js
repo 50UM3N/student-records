@@ -8,7 +8,8 @@ FilePond.registerPlugin(
   FilePondPluginFileValidateType,
   FilePondPluginFileEncode,
   FilePondPluginFileRename,
-  FilePondPluginImageCrop
+  FilePondPluginImageCrop,
+  FilePondPluginImageEdit
 );
 const inputElement = document.querySelector('input[type="file"]');
 const pond = FilePond.create(inputElement, {
@@ -32,6 +33,10 @@ const pond = FilePond.create(inputElement, {
   },
   allowImageCrop: true,
   imageCropAspectRatio: "1:1",
+  imageEditInstantEdit: true,
+  imageEditEditor: Doka.create({
+    utils: ["crop"],
+  }),
 });
 const hiddenInput = document.getElementById("hiddenInput");
 if (hiddenInput) {
