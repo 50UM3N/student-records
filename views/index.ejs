@@ -9,8 +9,11 @@
                 S-Manager is a opensource project that helps you to manage student and teachers
                 in efficient way. sign up to visit all student. Made with Node.Js HTML, CSS, JS, FilePond.
             </p>
-            <div class="call-to-action"> <a href="/signup" class="anchor-button">Sign Up</a> <a href="/student"
-                    class="anchor-button" style="margin-left: .5rem;">Students</a>
+            <div class="call-to-action">
+                <% if(user==undefined){ %>
+                <a href="/signup" class="anchor-button">Sign Up</a>
+                <% } %>
+                <a href="/student" class="anchor-button" style="margin-left: .5rem;">Students</a>
             </div>
         </div>
     </div>
@@ -22,13 +25,13 @@
         </div>
     </div>
 </div>
-<div style="width: 100%; height: 200px;"></div>
+<!-- <div style="width: 100%; height: 200px;"></div> -->
 <!-- content -->
 <!-- footer -->
-<footer>
+<!-- <footer>
     <div class="container footer">
         <p>Made with love & coffee in kolkata.</p>
         <p>Copyright © S-Manager 2020</p>
     </div>
-</footer>
+</footer> -->
 <!-- footer -->

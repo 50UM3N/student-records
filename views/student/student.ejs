@@ -47,7 +47,10 @@
         </div>
         <div class="button-container">
             <a href="/student" class="anchor-button">Back</a>
+            <% if (user.role!='user') {%>
             <a href="/update/<%=student.id%>" class="anchor-button">Edit</a>
+            <% } %>
+
         </div>
     </div>
 </div>

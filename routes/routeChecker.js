@@ -15,6 +15,17 @@ function notAuthorize(req, res, next) {
   return next();
 }
 
+// check the user is co admin or not
+function isCoAdminOrAdmin(req, res, next) {
+  if (
+    req.isAuthenticated() &&
+    (req.user.role == ROLE.CO_ADMIN || req.user.role == ROLE.ADMIN)
+  ) {
+    return next();
+  }
+  return res.redirect("/");
+}
+
 // check the user is admin or not
 function isAdmin(req, res, next) {
   if (req.isAuthenticated() && req.user.role == ROLE.ADMIN) {
@@ -26,4 +37,5 @@ module.exports = {
   authorize,
   notAuthorize,
   isAdmin,
+  isCoAdminOrAdmin,
 };

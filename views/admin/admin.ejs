@@ -27,7 +27,7 @@
                 <% if(data.role=="admin") {%>
                 <!-- co admin -->
                 <li class="dropdown-list-item">
-                    <a href="/admin/update?role=co-admin&id=<%= data.id %>">
+                    <a href="/admin/update?role=co_admin&id=<%= data.id %>">
                         <div class="list-icon-container">
                             <svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                                 <path
@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <!-- delete -->
-                <% }else if(data.role=="co-admin") { %>
+                <% }else if(data.role=="co_admin") { %>
                 <!-- admin -->
                 <li class="dropdown-list-item">
                     <a href="/admin/update?role=admin&id=<%= data.id %>">
@@ -90,7 +90,7 @@
                 </li>
                 <!-- co admin -->
                 <li class="dropdown-list-item">
-                    <a href="/admin/update?role=co-admin&id=<%= data.id %>">
+                    <a href="/admin/update?role=co_admin&id=<%= data.id %>">
                         <div class="list-icon-container">
                             <svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                                 <path

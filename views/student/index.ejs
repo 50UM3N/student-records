@@ -44,7 +44,7 @@
                             <div class="button-container">
                                 <a class="anchor-button card-button a-small"
                                     href="/student/<%=student.id%>"><span>Visit</span></a>
-                                <% if (user.role=='admin') {%>
+                                <% if (user.role!='user') {%>
                                 <a class="anchor-button card-button a-small"
                                     href="/update/<%=student.id%>"><span>Edit</span></a>
                                 <%}  %>

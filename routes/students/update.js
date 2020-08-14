@@ -1,12 +1,12 @@
 const express = require("express");
 const route = express.Router();
 const student = require("../../models/students_scheme");
-const { authorize, isAdmin } = require("../routeChecker");
+const { authorize, isCoAdminOrAdmin } = require("../routeChecker");
 const { imageToBase64, calculate_age } = require("../../functions/function");
 
 //student update post route
 route.use(authorize);
-route.use(isAdmin);
+route.use(isCoAdminOrAdmin);
 route.post("/:id", imageToBase64, (req, res) => {
   student.findByIdAndUpdate(
     req.params.id,
@@ -47,7 +47,6 @@ route.get("/", (req, res) => {
 
 //student update get route
 route.get("/:id", (req, res) => {
-  console.log(req.originalUrl);
   //find one student that has to edit the info
   if (
     req.params.id === undefined ||

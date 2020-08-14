@@ -1,11 +1,11 @@
 const express = require("express");
 const route = express.Router();
 const student = require("../../models/students_scheme");
-const { authorize, isAdmin } = require("../routeChecker");
+const { authorize, isCoAdminOrAdmin } = require("../routeChecker");
 const { imageToBase64, calculate_age } = require("../../functions/function");
 
 route.use(authorize);
-route.use(isAdmin);
+route.use(isCoAdminOrAdmin);
 
 // new student post route
 route.post("/", imageToBase64, (req, res) => {
