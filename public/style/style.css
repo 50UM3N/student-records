@@ -1456,4 +1456,191 @@ footer .footer {
     position: relative;
   }
 }
+
+.user-list {
+  list-style: none;
+  padding: 0rem 1.5rem;
+}
+
+.user-list .user-list-items {
+  position: relative;
+  width: 100%;
+  margin: 0.5rem 0rem;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.user-list .user-list-items:last-child {
+  border: none;
+}
+
+.user-list .user-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-list .user-info-container .user-profile-image {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.user-list .user-info-container .user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-list .user-info-container p.user-name {
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.user-list .user-info-container p.user-name span {
+  font-size: 12px;
+}
+
+.user-list .user-info-container p.user-name span.admin {
+  color: #ff6584;
+}
+
+.user-list .user-info-container p.user-name span.co-admin {
+  color: #13d862;
+}
+
+.user-list .user-info-container p.user-name span.user {
+  color: #ffc041;
+}
+
+.user-list .user-info-container p.caption {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: gray;
+  font-size: 11px;
+}
+
+.user-list .a111 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-list .a111 .ellipse {
+  width: 25px;
+  height: 16px;
+  margin: 0.5rem;
+  fill: gray;
+}
+
+.user-list-dropdown:focus-within .user-list-dropdown-menu {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: scale(1) translate(0px, 0px);
+          transform: scale(1) translate(0px, 0px);
+}
+
+.user-list-dropdown-menu {
+  background-color: white;
+  -webkit-transform: scale(0.95) translate(8px, -10px);
+          transform: scale(0.95) translate(8px, -10px);
+  right: 15px;
+  top: 50px;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  list-style: none;
+  border-radius: 0.25rem;
+  border: 1px solid var(--dropdown-menu-border-color);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.user-list-dropdown-menu .dropdown-list-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  height: 25px;
+  padding: 0.85rem;
+}
+
+.user-list-dropdown-menu .dropdown-list-item a {
+  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: var(--dropdown-menu-text-color);
+}
+
+.user-list-dropdown-menu .dropdown-list-item .list-icon-container {
+  width: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 8px;
+}
+
+.user-list-dropdown-menu .dropdown-list-item .list-icon-container .list-icon {
+  height: 14.4px;
+  fill: var(--dropdown-menu-text-color);
+}
+
+.user-list-dropdown-menu .dropdown-list-item:hover {
+  background-color: var(--dropdown-menu-item-hover-color);
+}
+
+.user-list-dropdown-menu .dropdown-list-item:last-child {
+  border-top: 1px solid var(--dropdown-menu-border-color);
+}
 /*# sourceMappingURL=style.css.map */
