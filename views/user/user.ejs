@@ -2,16 +2,29 @@
 <div class="container">
     <div class="box headline-border">
         <h6 class="box-heading bottom-border">Profile</h6>
+        <% if (locals.messages.error) { %>
+        <div class="alert alert-danger">
+            <span class="closeBtn" onclick="alertClose(this)">&times;</span>
+            <%=locals.messages.error%>
+        </div>
+        <% } %>
+        <!-- displaying success messages -->
+        <% if (locals.messages.success) { %>
+        <div class="alert alert-success">
+            <span class="closeBtn" onclick="alertClose(this)">&times;</span>
+            <%=locals.messages.success%>
+        </div>
+        <% } %>
+        <div class="from-profile-image">
+            <% if(user.thumbnail){ %>
+            <img src="<%= user.thumbnail%>" alt="profile image">
+            <% } else { %>
+            <img src="images/pic.png" alt="profile image">
+            <% } %>
+        </div>
         <!-- Form -->
-        <form action="">
-            <div class="from-profile-image">
-                <% if(user.thumbnail){ %>
-                <img src="<%= user.thumbnail%>" alt="profile image">
-                <% } else { %>
-                <img src="images/pic.png" alt="profile image">
-                <% } %>
-            </div>
-            <!-- College name -->
+        <form action="/user/update/<%= user.id %>" method="POST">
+            <!-- User name -->
             <div class="form-input-group">
                 <label>Name</label>
                 <input required class="form-input" type="text" id="name" name="name" placeholder="Name"
