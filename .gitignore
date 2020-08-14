@@ -1,3 +1,4 @@
 node_modules
 .env
-doka
+public/js/doka
+public/style/doka
