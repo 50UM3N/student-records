@@ -8,8 +8,8 @@ FilePond.registerPlugin(
   FilePondPluginFileValidateType,
   FilePondPluginFileEncode,
   FilePondPluginFileRename,
-  FilePondPluginImageCrop,
-  FilePondPluginImageEdit
+  FilePondPluginImageCrop
+  // FilePondPluginImageEdit
 );
 const inputElement = document.querySelector('input[type="file"]');
 const pond = FilePond.create(inputElement, {
@@ -27,16 +27,17 @@ const pond = FilePond.create(inputElement, {
   labelFileTypeNotAllowed: "File of invalid type",
   fileValidateTypeLabelExpectedTypes: "Expects {allButLastType} or {lastType}",
   stylePanelAspectRatio: "1:1",
+  // stylePanelLayout: "compact",
   allowFileRename: true,
   fileRenameFunction: (file) => {
     return `image${file.extension}`;
   },
   allowImageCrop: true,
   imageCropAspectRatio: "1:1",
-  imageEditInstantEdit: true,
-  imageEditEditor: Doka.create({
-    utils: ["crop"],
-  }),
+  // imageEditInstantEdit: true,
+  // imageEditEditor: Doka.create({
+  //   utils: ["crop"],
+  // }),
 });
 const hiddenInput = document.getElementById("hiddenInput");
 if (hiddenInput) {
