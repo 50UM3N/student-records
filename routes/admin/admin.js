@@ -21,4 +21,32 @@ route.get("/", (req, res) => {
     }
   });
 });
+
+route.get("/delete/:id", (req, res) => {
+  console.log(req.params.id);
+  user.findByIdAndDelete(req.params.id, (err, data) => {
+    if (err) {
+      console.log(err);
+    }
+    if (data) {
+      console.log("Deleted" + data.id);
+      res.redirect("/admin");
+    }
+  });
+});
+
+route.get("/update", (req, res) => {
+  const { role, id } = req.query;
+  user.findByIdAndUpdate(id, { role: role }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.redirect("/admin");
+    }
+    if (data) {
+      res.redirect("/admin");
+    } else {
+      res.redirect("/admin");
+    }
+  });
+});
 module.exports = route;

@@ -27,7 +27,7 @@
                 <% if(data.role=="admin") {%>
                 <!-- co admin -->
                 <li class="dropdown-list-item">
-                    <a href="#">
+                    <a href="/admin/update?role=co-admin&id=<%= data.id %>">
                         <div class="list-icon-container">
                             <svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                                 <path
@@ -39,7 +39,7 @@
                 </li>
                 <!-- revoke -->
                 <li class="dropdown-list-item">
-                    <a href="#">
+                    <a href="/admin/update?role=user&id=<%= data.id %>">
                         <div class="list-icon-container">
                             <svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                                 <path
@@ -53,7 +53,7 @@
                 <% }else if(data.role=="co-admin") { %>
                 <!-- admin -->
                 <li class="dropdown-list-item">
-                    <a href="#">
+                    <a href="/admin/update?role=admin&id=<%= data.id %>">
                         <div class="list-icon-container">
                             <svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                 <path
@@ -65,7 +65,7 @@
                 </li>
                 <!-- revoke -->
                 <li class="dropdown-list-item">
-                    <a href="#">
+                    <a href="/admin/update?role=user&id=<%= data.id %>">
                         <div class="list-icon-container">
                             <svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                                 <path
@@ -78,7 +78,7 @@
                 <% }else if(data.role=="user") { %>
                 <!-- admin -->
                 <li class="dropdown-list-item">
-                    <a href="#">
+                    <a href="/admin/update?role=admin&id=<%= data.id %>">
                         <div class="list-icon-container">
                             <svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                 <path
@@ -90,7 +90,7 @@
                 </li>
                 <!-- co admin -->
                 <li class="dropdown-list-item">
-                    <a href="#">
+                    <a href="/admin/update?role=co-admin&id=<%= data.id %>">
                         <div class="list-icon-container">
                             <svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                                 <path
@@ -103,7 +103,7 @@
                 <%  }%>
                 <!-- delete -->
                 <li class="dropdown-list-item">
-                    <a href="#">
+                    <a href="/admin/delete/<%= data.id %>">
                         <div class="list-icon-container">
                             <svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                 <path

@@ -1605,8 +1605,8 @@ footer .footer {
       -ms-flex-align: center;
           align-items: center;
   font-size: 14px;
-  height: 25px;
-  padding: 0.85rem;
+  height: 30px;
+  padding: 0 0.85rem;
 }
 
 .user-list-dropdown-menu .dropdown-list-item a {
