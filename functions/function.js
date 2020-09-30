@@ -10,7 +10,8 @@ function imageToBase64(req, res, next) {
     req.body.imageData = imageData;
     req.body.imageType = imageType;
     return next();
-  } else {
+  } 
+  else {
     req.flash({ msg: "Error uploading image" });
     res.redirect(req.originalUrl);
   }
